@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 const plans = [
   {
     name: "Basic",
-    price: "Free",
+    price: "$29",
+    period: "/month",
     description: "Get started with essential filtering",
     features: [
       "Manual filtering controls",
@@ -19,7 +20,7 @@ const plans = [
   },
   {
     name: "Advanced",
-    price: "$29",
+    price: "$49",
     period: "/month",
     description: "Full AI-powered opportunity filtering",
     features: [
@@ -48,7 +49,7 @@ const plans = [
       "Early access to agent features",
       "Dedicated support",
     ],
-    cta: "Contact Us",
+    cta: "Get Started",
     popular: false,
   },
 ];
