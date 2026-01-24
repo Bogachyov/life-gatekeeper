@@ -5,6 +5,7 @@ import { User } from "@supabase/supabase-js";
 import { Button } from "@/components/ui/button";
 import {
   LayoutDashboard,
+  Wallet,
   Filter,
   MessageSquare,
   Settings,
@@ -126,6 +127,12 @@ export default function Dashboard() {
             <Button variant="secondary" className="w-full justify-start gap-3">
               <LayoutDashboard className="w-4 h-4" />
               Dashboard
+            </Button>
+            <Button variant="ghost" className="w-full justify-start gap-3 text-muted-foreground" asChild>
+              <Link to="/wallet">
+                <Wallet className="w-4 h-4" />
+                Wallet
+              </Link>
             </Button>
             <Button variant="ghost" className="w-full justify-start gap-3 text-muted-foreground">
               <Filter className="w-4 h-4" />
