@@ -8,6 +8,10 @@ import Auth from "./pages/Auth";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
 import Wallet from "./pages/Wallet";
+import Integrations from "./pages/Integrations";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import GDPR from "./pages/GDPR";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +28,10 @@ const App = () => (
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/wallet" element={<Wallet />} />
+          <Route path="/integrations" element={<Integrations />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/gdpr" element={<GDPR />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
