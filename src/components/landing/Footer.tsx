@@ -37,9 +37,9 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <span className="text-sm text-muted-foreground">
+                <Link to="/integrations" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Integrations
-                </span>
+                </Link>
               </li>
             </ul>
           </div>
@@ -49,19 +49,19 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <span className="text-sm text-muted-foreground">
+                <Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Privacy Policy
-                </span>
+                </Link>
               </li>
               <li>
-                <span className="text-sm text-muted-foreground">
+                <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Terms of Service
-                </span>
+                </Link>
               </li>
               <li>
-                <span className="text-sm text-muted-foreground">
+                <Link to="/gdpr" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   GDPR
-                </span>
+                </Link>
               </li>
             </ul>
           </div>
