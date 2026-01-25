@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { User } from "@supabase/supabase-js";
 import { Button } from "@/components/ui/button";
 import {
-  Wallet as WalletIcon,
-  LayoutDashboard,
-  Settings,
-  LogOut,
   ArrowDownUp,
   Plus,
-  ChevronLeft,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -26,6 +21,7 @@ import { PayoutMethodsList } from "@/components/wallet/PayoutMethodsList";
 import { TransactionHistory } from "@/components/wallet/TransactionHistory";
 import { AddPayoutMethodDialog } from "@/components/wallet/AddPayoutMethodDialog";
 import { WithdrawDialog } from "@/components/wallet/WithdrawDialog";
+import { DashboardLayout } from "@/components/layout/DashboardLayout";
 
 export default function Wallet() {
   const [user, setUser] = useState<User | null>(null);
@@ -64,15 +60,6 @@ export default function Wallet() {
 
     return () => subscription.unsubscribe();
   }, [navigate]);
-
-  const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    toast({
-      title: "Signed out",
-      description: "You've been signed out successfully.",
-    });
-    navigate("/");
-  };
 
   const handleAddPayoutMethod = async (data: {
     methodType: string;
@@ -117,38 +104,8 @@ export default function Wallet() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border/50 px-6 py-4">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon" asChild>
-              <Link to="/dashboard">
-                <ChevronLeft className="w-5 h-5" />
-              </Link>
-            </Button>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <WalletIcon className="w-4 h-4 text-primary-foreground" />
-              </div>
-              <h1 className="text-xl font-serif font-semibold">Wallet</h1>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <Button variant="outline" asChild>
-              <Link to="/dashboard">
-                <LayoutDashboard className="w-4 h-4 mr-2" />
-                Dashboard
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" onClick={handleSignOut}>
-              <LogOut className="w-5 h-5" />
-            </Button>
-          </div>
-        </div>
-      </header>
-
-      <main className="max-w-5xl mx-auto p-6 space-y-8">
+    <DashboardLayout>
+      <div className="max-w-5xl mx-auto p-6 space-y-8">
         {/* Balance Overview */}
         <WalletOverview wallet={wallet || null} isLoading={walletLoading} />
 
@@ -183,7 +140,7 @@ export default function Wallet() {
             <TransactionHistory transactions={transactions} isLoading={txLoading} />
           </div>
         </div>
-      </main>
+      </div>
 
       {/* Dialogs */}
       <AddPayoutMethodDialog
@@ -203,6 +160,6 @@ export default function Wallet() {
           setShowAddMethod(true);
         }}
       />
-    </div>
+    </DashboardLayout>
   );
 }
