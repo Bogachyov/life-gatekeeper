@@ -8,6 +8,9 @@ import Auth from "./pages/Auth";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
 import Wallet from "./pages/Wallet";
+import Filtered from "./pages/Filtered";
+import AutoReplies from "./pages/AutoReplies";
+import Settings from "./pages/Settings";
 import Integrations from "./pages/Integrations";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -28,6 +31,9 @@ const App = () => (
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/wallet" element={<Wallet />} />
+          <Route path="/filtered" element={<Filtered />} />
+          <Route path="/auto-replies" element={<AutoReplies />} />
+          <Route path="/settings" element={<Settings />} />
           <Route path="/integrations" element={<Integrations />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
