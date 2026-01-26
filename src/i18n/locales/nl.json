@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "Inloggen",
+    "signOut": "Uitloggen",
+    "getStarted": "Aan de Slag",
+    "learnMore": "Meer Weten",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "loading": "Laden...",
+    "error": "Fout",
+    "success": "Succes",
+    "back": "Terug",
+    "next": "Volgende",
+    "submit": "Verzenden",
+    "search": "Zoeken",
+    "filter": "Filteren",
+    "all": "Alles",
+    "none": "Geen",
+    "yes": "Ja",
+    "no": "Nee"
+  },
+  "nav": {
+    "howItWorks": "Hoe Het Werkt",
+    "pricing": "Prijzen",
+    "dashboard": "Dashboard",
+    "wallet": "Portemonnee",
+    "filtered": "Gefilterd",
+    "autoReplies": "Auto-Antwoorden",
+    "settings": "Instellingen",
+    "integrations": "Integraties"
+  },
+  "hero": {
+    "title": "Uw AI-Aangedreven Levens Besturingssysteem",
+    "subtitle": "Filter de ruis, focus op wat belangrijk is en neem controle over uw digitale leven met intelligente automatisering.",
+    "cta": "Gratis Proberen",
+    "ctaSecondary": "Demo Bekijken"
+  },
+  "features": {
+    "title": "Intelligente Functies",
+    "subtitle": "Alles wat je nodig hebt om je digitale leven efficiënt te beheren"
+  },
+  "pricing": {
+    "title": "Eenvoudige, Transparante Prijzen",
+    "subtitle": "Kies het plan dat bij u past",
+    "monthly": "Maandelijks",
+    "yearly": "Jaarlijks",
+    "perMonth": "/maand",
+    "popular": "Meest Populair",
+    "free": "Gratis",
+    "pro": "Pro",
+    "enterprise": "Enterprise",
+    "getStarted": "Aan de Slag",
+    "contactSales": "Neem Contact Op"
+  },
+  "footer": {
+    "product": "Product",
+    "legal": "Juridisch",
+    "company": "Bedrijf",
+    "support": "Ondersteuning",
+    "privacy": "Privacybeleid",
+    "terms": "Servicevoorwaarden",
+    "gdpr": "AVG",
+    "copyright": "© {{year}} LifeOS. Alle rechten voorbehouden."
+  },
+  "settings": {
+    "title": "Instellingen",
+    "subtitle": "Beheer uw account en voorkeuren.",
+    "profile": "Profiel",
+    "email": "E-mail",
+    "emailHelp": "Neem contact op met support om uw e-mail te wijzigen.",
+    "notifications": "Meldingen",
+    "emailNotifications": "E-mailmeldingen",
+    "emailNotificationsDesc": "Ontvang dagelijkse samenvattingen en urgente escalaties",
+    "escalateUrgent": "Urgente berichten escaleren",
+    "escalateUrgentDesc": "Word direct op de hoogte gebracht van prioriteitsitems",
+    "aiPreferences": "AI Voorkeuren",
+    "autoReply": "Auto-antwoord op gefilterde berichten",
+    "autoReplyDesc": "Laat AI automatisch beleefde afwijzingen versturen",
+    "dangerZone": "Gevarenzone",
+    "deleteAccount": "Account verwijderen",
+    "deleteAccountDesc": "Verwijder uw account en alle gegevens permanent",
+    "saveChanges": "Wijzigingen Opslaan",
+    "settingsSaved": "Instellingen opgeslagen",
+    "settingsSavedDesc": "Uw voorkeuren zijn bijgewerkt."
+  },
+  "wallet": {
+    "title": "Portemonnee",
+    "balance": "Saldo",
+    "pending": "In Behandeling",
+    "withdraw": "Opnemen",
+    "addPayoutMethod": "Uitbetalingsmethode Toevoegen",
+    "transactions": "Transacties",
+    "payoutMethods": "Uitbetalingsmethodes"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welkom terug",
+    "overview": "Overzicht",
+    "recentActivity": "Recente Activiteit"
+  },
+  "auth": {
+    "signInTitle": "Welkom terug",
+    "signUpTitle": "Account aanmaken",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "noAccount": "Geen account?",
+    "hasAccount": "Al een account?",
+    "signUp": "Registreren",
+    "signIn": "Inloggen"
+  },
+  "language": {
+    "select": "Taal Selecteren",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}

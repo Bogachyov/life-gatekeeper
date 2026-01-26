@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "Accedi",
+    "signOut": "Esci",
+    "getStarted": "Inizia",
+    "learnMore": "Scopri di Più",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo",
+    "back": "Indietro",
+    "next": "Avanti",
+    "submit": "Invia",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "all": "Tutti",
+    "none": "Nessuno",
+    "yes": "Sì",
+    "no": "No"
+  },
+  "nav": {
+    "howItWorks": "Come Funziona",
+    "pricing": "Prezzi",
+    "dashboard": "Dashboard",
+    "wallet": "Portafoglio",
+    "filtered": "Filtrati",
+    "autoReplies": "Risposte Auto",
+    "settings": "Impostazioni",
+    "integrations": "Integrazioni"
+  },
+  "hero": {
+    "title": "Il Tuo Sistema Operativo di Vita con IA",
+    "subtitle": "Filtra il rumore, concentrati su ciò che conta e prendi il controllo della tua vita digitale con l'automazione intelligente.",
+    "cta": "Prova Gratuita",
+    "ctaSecondary": "Guarda Demo"
+  },
+  "features": {
+    "title": "Funzionalità Intelligenti",
+    "subtitle": "Tutto ciò di cui hai bisogno per gestire la tua vita digitale in modo efficiente"
+  },
+  "pricing": {
+    "title": "Prezzi Semplici e Trasparenti",
+    "subtitle": "Scegli il piano che fa per te",
+    "monthly": "Mensile",
+    "yearly": "Annuale",
+    "perMonth": "/mese",
+    "popular": "Più Popolare",
+    "free": "Gratis",
+    "pro": "Pro",
+    "enterprise": "Enterprise",
+    "getStarted": "Inizia",
+    "contactSales": "Contatta Vendite"
+  },
+  "footer": {
+    "product": "Prodotto",
+    "legal": "Legale",
+    "company": "Azienda",
+    "support": "Supporto",
+    "privacy": "Informativa sulla Privacy",
+    "terms": "Termini di Servizio",
+    "gdpr": "GDPR",
+    "copyright": "© {{year}} LifeOS. Tutti i diritti riservati."
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "subtitle": "Gestisci il tuo account e le tue preferenze.",
+    "profile": "Profilo",
+    "email": "Email",
+    "emailHelp": "Contatta il supporto per cambiare la tua email.",
+    "notifications": "Notifiche",
+    "emailNotifications": "Notifiche email",
+    "emailNotificationsDesc": "Ricevi riepiloghi giornalieri ed escalation urgenti",
+    "escalateUrgent": "Escalation messaggi urgenti",
+    "escalateUrgentDesc": "Ricevi notifiche immediate per elementi ad alta priorità",
+    "aiPreferences": "Preferenze IA",
+    "autoReply": "Risposta automatica ai messaggi filtrati",
+    "autoReplyDesc": "Lascia che l'IA invii rifiuti cortesi automaticamente",
+    "dangerZone": "Zona Pericolosa",
+    "deleteAccount": "Elimina account",
+    "deleteAccountDesc": "Elimina definitivamente il tuo account e tutti i dati",
+    "saveChanges": "Salva Modifiche",
+    "settingsSaved": "Impostazioni salvate",
+    "settingsSavedDesc": "Le tue preferenze sono state aggiornate."
+  },
+  "wallet": {
+    "title": "Portafoglio",
+    "balance": "Saldo",
+    "pending": "In Sospeso",
+    "withdraw": "Preleva",
+    "addPayoutMethod": "Aggiungi Metodo di Pagamento",
+    "transactions": "Transazioni",
+    "payoutMethods": "Metodi di Pagamento"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Bentornato",
+    "overview": "Panoramica",
+    "recentActivity": "Attività Recente"
+  },
+  "auth": {
+    "signInTitle": "Bentornato",
+    "signUpTitle": "Crea un account",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Password dimenticata?",
+    "noAccount": "Non hai un account?",
+    "hasAccount": "Hai già un account?",
+    "signUp": "Registrati",
+    "signIn": "Accedi"
+  },
+  "language": {
+    "select": "Seleziona Lingua",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}

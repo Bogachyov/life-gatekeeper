@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "Entrar",
+    "signOut": "Sair",
+    "getStarted": "Começar",
+    "learnMore": "Saiba Mais",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "back": "Voltar",
+    "next": "Próximo",
+    "submit": "Enviar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "all": "Todos",
+    "none": "Nenhum",
+    "yes": "Sim",
+    "no": "Não"
+  },
+  "nav": {
+    "howItWorks": "Como Funciona",
+    "pricing": "Preços",
+    "dashboard": "Painel",
+    "wallet": "Carteira",
+    "filtered": "Filtrados",
+    "autoReplies": "Respostas Auto",
+    "settings": "Configurações",
+    "integrations": "Integrações"
+  },
+  "hero": {
+    "title": "Seu Sistema Operacional de Vida com IA",
+    "subtitle": "Filtre o ruído, foque no que importa e assuma o controle da sua vida digital com automação inteligente.",
+    "cta": "Teste Grátis",
+    "ctaSecondary": "Ver Demo"
+  },
+  "features": {
+    "title": "Recursos Inteligentes",
+    "subtitle": "Tudo que você precisa para gerenciar sua vida digital eficientemente"
+  },
+  "pricing": {
+    "title": "Preços Simples e Transparentes",
+    "subtitle": "Escolha o plano que funciona para você",
+    "monthly": "Mensal",
+    "yearly": "Anual",
+    "perMonth": "/mês",
+    "popular": "Mais Popular",
+    "free": "Grátis",
+    "pro": "Pro",
+    "enterprise": "Empresarial",
+    "getStarted": "Começar",
+    "contactSales": "Contatar Vendas"
+  },
+  "footer": {
+    "product": "Produto",
+    "legal": "Legal",
+    "company": "Empresa",
+    "support": "Suporte",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "gdpr": "LGPD",
+    "copyright": "© {{year}} LifeOS. Todos os direitos reservados."
+  },
+  "settings": {
+    "title": "Configurações",
+    "subtitle": "Gerencie sua conta e preferências.",
+    "profile": "Perfil",
+    "email": "E-mail",
+    "emailHelp": "Entre em contato com o suporte para alterar seu e-mail.",
+    "notifications": "Notificações",
+    "emailNotifications": "Notificações por e-mail",
+    "emailNotificationsDesc": "Receba resumos diários e escalações urgentes",
+    "escalateUrgent": "Escalar mensagens urgentes",
+    "escalateUrgentDesc": "Seja notificado imediatamente para itens prioritários",
+    "aiPreferences": "Preferências de IA",
+    "autoReply": "Resposta automática para mensagens filtradas",
+    "autoReplyDesc": "Deixe a IA enviar recusas educadas automaticamente",
+    "dangerZone": "Zona de Perigo",
+    "deleteAccount": "Excluir conta",
+    "deleteAccountDesc": "Excluir permanentemente sua conta e todos os dados",
+    "saveChanges": "Salvar Alterações",
+    "settingsSaved": "Configurações salvas",
+    "settingsSavedDesc": "Suas preferências foram atualizadas."
+  },
+  "wallet": {
+    "title": "Carteira",
+    "balance": "Saldo",
+    "pending": "Pendente",
+    "withdraw": "Sacar",
+    "addPayoutMethod": "Adicionar Método de Pagamento",
+    "transactions": "Transações",
+    "payoutMethods": "Métodos de Pagamento"
+  },
+  "dashboard": {
+    "title": "Painel",
+    "welcome": "Bem-vindo de volta",
+    "overview": "Visão Geral",
+    "recentActivity": "Atividade Recente"
+  },
+  "auth": {
+    "signInTitle": "Bem-vindo de volta",
+    "signUpTitle": "Criar uma conta",
+    "email": "E-mail",
+    "password": "Senha",
+    "forgotPassword": "Esqueceu a senha?",
+    "noAccount": "Não tem uma conta?",
+    "hasAccount": "Já tem uma conta?",
+    "signUp": "Cadastrar",
+    "signIn": "Entrar"
+  },
+  "language": {
+    "select": "Selecionar Idioma",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}

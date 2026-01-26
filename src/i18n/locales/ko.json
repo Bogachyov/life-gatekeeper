@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "로그인",
+    "signOut": "로그아웃",
+    "getStarted": "시작하기",
+    "learnMore": "더 알아보기",
+    "save": "저장",
+    "cancel": "취소",
+    "delete": "삭제",
+    "edit": "편집",
+    "loading": "로딩 중...",
+    "error": "오류",
+    "success": "성공",
+    "back": "뒤로",
+    "next": "다음",
+    "submit": "제출",
+    "search": "검색",
+    "filter": "필터",
+    "all": "전체",
+    "none": "없음",
+    "yes": "예",
+    "no": "아니오"
+  },
+  "nav": {
+    "howItWorks": "작동 방식",
+    "pricing": "가격",
+    "dashboard": "대시보드",
+    "wallet": "지갑",
+    "filtered": "필터됨",
+    "autoReplies": "자동 응답",
+    "settings": "설정",
+    "integrations": "통합"
+  },
+  "hero": {
+    "title": "AI 기반 라이프 운영 체제",
+    "subtitle": "소음을 필터링하고, 중요한 것에 집중하며, 지능형 자동화로 디지털 생활을 제어하세요.",
+    "cta": "무료 체험",
+    "ctaSecondary": "데모 보기"
+  },
+  "features": {
+    "title": "지능형 기능",
+    "subtitle": "디지털 생활을 효율적으로 관리하는 데 필요한 모든 것"
+  },
+  "pricing": {
+    "title": "간단하고 투명한 가격",
+    "subtitle": "자신에게 맞는 요금제를 선택하세요",
+    "monthly": "월간",
+    "yearly": "연간",
+    "perMonth": "/월",
+    "popular": "가장 인기",
+    "free": "무료",
+    "pro": "프로",
+    "enterprise": "기업",
+    "getStarted": "시작하기",
+    "contactSales": "영업팀 연락"
+  },
+  "footer": {
+    "product": "제품",
+    "legal": "법적 고지",
+    "company": "회사",
+    "support": "지원",
+    "privacy": "개인정보처리방침",
+    "terms": "이용약관",
+    "gdpr": "GDPR",
+    "copyright": "© {{year}} LifeOS. 모든 권리 보유."
+  },
+  "settings": {
+    "title": "설정",
+    "subtitle": "계정 및 환경설정을 관리합니다.",
+    "profile": "프로필",
+    "email": "이메일",
+    "emailHelp": "이메일 변경은 고객지원에 문의하세요.",
+    "notifications": "알림",
+    "emailNotifications": "이메일 알림",
+    "emailNotificationsDesc": "일일 요약 및 긴급 에스컬레이션 수신",
+    "escalateUrgent": "긴급 메시지 에스컬레이션",
+    "escalateUrgentDesc": "우선순위 항목에 대해 즉시 알림 받기",
+    "aiPreferences": "AI 환경설정",
+    "autoReply": "필터된 메시지에 자동 응답",
+    "autoReplyDesc": "AI가 자동으로 정중한 거절 응답 전송",
+    "dangerZone": "위험 구역",
+    "deleteAccount": "계정 삭제",
+    "deleteAccountDesc": "계정과 모든 데이터를 영구 삭제",
+    "saveChanges": "변경사항 저장",
+    "settingsSaved": "설정이 저장되었습니다",
+    "settingsSavedDesc": "환경설정이 업데이트되었습니다."
+  },
+  "wallet": {
+    "title": "지갑",
+    "balance": "잔액",
+    "pending": "대기 중",
+    "withdraw": "출금",
+    "addPayoutMethod": "출금 방법 추가",
+    "transactions": "거래 내역",
+    "payoutMethods": "출금 방법"
+  },
+  "dashboard": {
+    "title": "대시보드",
+    "welcome": "다시 오신 것을 환영합니다",
+    "overview": "개요",
+    "recentActivity": "최근 활동"
+  },
+  "auth": {
+    "signInTitle": "다시 오신 것을 환영합니다",
+    "signUpTitle": "계정 만들기",
+    "email": "이메일",
+    "password": "비밀번호",
+    "forgotPassword": "비밀번호를 잊으셨나요?",
+    "noAccount": "계정이 없으신가요?",
+    "hasAccount": "이미 계정이 있으신가요?",
+    "signUp": "가입하기",
+    "signIn": "로그인"
+  },
+  "language": {
+    "select": "언어 선택",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}

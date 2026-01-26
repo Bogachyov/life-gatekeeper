@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "Zaloguj się",
+    "signOut": "Wyloguj się",
+    "getStarted": "Rozpocznij",
+    "learnMore": "Dowiedz się Więcej",
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "loading": "Ładowanie...",
+    "error": "Błąd",
+    "success": "Sukces",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "submit": "Wyślij",
+    "search": "Szukaj",
+    "filter": "Filtruj",
+    "all": "Wszystko",
+    "none": "Brak",
+    "yes": "Tak",
+    "no": "Nie"
+  },
+  "nav": {
+    "howItWorks": "Jak To Działa",
+    "pricing": "Cennik",
+    "dashboard": "Panel",
+    "wallet": "Portfel",
+    "filtered": "Przefiltrowane",
+    "autoReplies": "Auto-Odpowiedzi",
+    "settings": "Ustawienia",
+    "integrations": "Integracje"
+  },
+  "hero": {
+    "title": "Twój System Operacyjny Życia z AI",
+    "subtitle": "Filtruj szum, skup się na tym co ważne i przejmij kontrolę nad swoim cyfrowym życiem dzięki inteligentnej automatyzacji.",
+    "cta": "Bezpłatny Okres Próbny",
+    "ctaSecondary": "Zobacz Demo"
+  },
+  "features": {
+    "title": "Inteligentne Funkcje",
+    "subtitle": "Wszystko czego potrzebujesz do efektywnego zarządzania cyfrowym życiem"
+  },
+  "pricing": {
+    "title": "Prosty, Przejrzysty Cennik",
+    "subtitle": "Wybierz plan, który Ci odpowiada",
+    "monthly": "Miesięcznie",
+    "yearly": "Rocznie",
+    "perMonth": "/miesiąc",
+    "popular": "Najpopularniejszy",
+    "free": "Bezpłatny",
+    "pro": "Pro",
+    "enterprise": "Enterprise",
+    "getStarted": "Rozpocznij",
+    "contactSales": "Skontaktuj się ze Sprzedażą"
+  },
+  "footer": {
+    "product": "Produkt",
+    "legal": "Prawne",
+    "company": "Firma",
+    "support": "Wsparcie",
+    "privacy": "Polityka Prywatności",
+    "terms": "Warunki Usługi",
+    "gdpr": "RODO",
+    "copyright": "© {{year}} LifeOS. Wszelkie prawa zastrzeżone."
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "subtitle": "Zarządzaj swoim kontem i preferencjami.",
+    "profile": "Profil",
+    "email": "E-mail",
+    "emailHelp": "Skontaktuj się ze wsparciem, aby zmienić e-mail.",
+    "notifications": "Powiadomienia",
+    "emailNotifications": "Powiadomienia e-mail",
+    "emailNotificationsDesc": "Otrzymuj codzienne podsumowania i pilne eskalacje",
+    "escalateUrgent": "Eskaluj pilne wiadomości",
+    "escalateUrgentDesc": "Otrzymuj natychmiastowe powiadomienia o priorytetowych elementach",
+    "aiPreferences": "Preferencje AI",
+    "autoReply": "Auto-odpowiedź na przefiltrowane wiadomości",
+    "autoReplyDesc": "Pozwól AI automatycznie wysyłać uprzejme odmowy",
+    "dangerZone": "Strefa Zagrożenia",
+    "deleteAccount": "Usuń konto",
+    "deleteAccountDesc": "Trwale usuń swoje konto i wszystkie dane",
+    "saveChanges": "Zapisz Zmiany",
+    "settingsSaved": "Ustawienia zapisane",
+    "settingsSavedDesc": "Twoje preferencje zostały zaktualizowane."
+  },
+  "wallet": {
+    "title": "Portfel",
+    "balance": "Saldo",
+    "pending": "Oczekujące",
+    "withdraw": "Wypłać",
+    "addPayoutMethod": "Dodaj Metodę Wypłaty",
+    "transactions": "Transakcje",
+    "payoutMethods": "Metody Wypłaty"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "welcome": "Witaj ponownie",
+    "overview": "Przegląd",
+    "recentActivity": "Ostatnia Aktywność"
+  },
+  "auth": {
+    "signInTitle": "Witaj ponownie",
+    "signUpTitle": "Utwórz konto",
+    "email": "E-mail",
+    "password": "Hasło",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "noAccount": "Nie masz konta?",
+    "hasAccount": "Masz już konto?",
+    "signUp": "Zarejestruj się",
+    "signIn": "Zaloguj się"
+  },
+  "language": {
+    "select": "Wybierz Język",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}

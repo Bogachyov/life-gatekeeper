@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "Anmelden",
+    "signOut": "Abmelden",
+    "getStarted": "Loslegen",
+    "learnMore": "Mehr Erfahren",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "loading": "Wird geladen...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "back": "Zurück",
+    "next": "Weiter",
+    "submit": "Absenden",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "all": "Alle",
+    "none": "Keine",
+    "yes": "Ja",
+    "no": "Nein"
+  },
+  "nav": {
+    "howItWorks": "So Funktioniert's",
+    "pricing": "Preise",
+    "dashboard": "Dashboard",
+    "wallet": "Geldbörse",
+    "filtered": "Gefiltert",
+    "autoReplies": "Auto-Antworten",
+    "settings": "Einstellungen",
+    "integrations": "Integrationen"
+  },
+  "hero": {
+    "title": "Ihr KI-gestütztes Lebens-Betriebssystem",
+    "subtitle": "Filtern Sie den Lärm, konzentrieren Sie sich auf das Wesentliche und übernehmen Sie die Kontrolle über Ihr digitales Leben mit intelligenter Automatisierung.",
+    "cta": "Kostenlos Testen",
+    "ctaSecondary": "Demo Ansehen"
+  },
+  "features": {
+    "title": "Intelligente Funktionen",
+    "subtitle": "Alles was Sie brauchen, um Ihr digitales Leben effizient zu verwalten"
+  },
+  "pricing": {
+    "title": "Einfache, Transparente Preise",
+    "subtitle": "Wählen Sie den Plan, der zu Ihnen passt",
+    "monthly": "Monatlich",
+    "yearly": "Jährlich",
+    "perMonth": "/Monat",
+    "popular": "Am Beliebtesten",
+    "free": "Kostenlos",
+    "pro": "Pro",
+    "enterprise": "Unternehmen",
+    "getStarted": "Loslegen",
+    "contactSales": "Vertrieb Kontaktieren"
+  },
+  "footer": {
+    "product": "Produkt",
+    "legal": "Rechtliches",
+    "company": "Unternehmen",
+    "support": "Support",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "gdpr": "DSGVO",
+    "copyright": "© {{year}} LifeOS. Alle Rechte vorbehalten."
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "subtitle": "Verwalten Sie Ihr Konto und Ihre Präferenzen.",
+    "profile": "Profil",
+    "email": "E-Mail",
+    "emailHelp": "Kontaktieren Sie den Support, um Ihre E-Mail zu ändern.",
+    "notifications": "Benachrichtigungen",
+    "emailNotifications": "E-Mail-Benachrichtigungen",
+    "emailNotificationsDesc": "Erhalten Sie tägliche Zusammenfassungen und dringende Eskalationen",
+    "escalateUrgent": "Dringende Nachrichten eskalieren",
+    "escalateUrgentDesc": "Werden Sie sofort über prioritäre Elemente benachrichtigt",
+    "aiPreferences": "KI-Präferenzen",
+    "autoReply": "Auto-Antwort auf gefilterte Nachrichten",
+    "autoReplyDesc": "Lassen Sie die KI automatisch höfliche Ablehnungen senden",
+    "dangerZone": "Gefahrenzone",
+    "deleteAccount": "Konto löschen",
+    "deleteAccountDesc": "Ihr Konto und alle Daten dauerhaft löschen",
+    "saveChanges": "Änderungen Speichern",
+    "settingsSaved": "Einstellungen gespeichert",
+    "settingsSavedDesc": "Ihre Präferenzen wurden aktualisiert."
+  },
+  "wallet": {
+    "title": "Geldbörse",
+    "balance": "Guthaben",
+    "pending": "Ausstehend",
+    "withdraw": "Abheben",
+    "addPayoutMethod": "Auszahlungsmethode Hinzufügen",
+    "transactions": "Transaktionen",
+    "payoutMethods": "Auszahlungsmethoden"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Willkommen zurück",
+    "overview": "Übersicht",
+    "recentActivity": "Letzte Aktivität"
+  },
+  "auth": {
+    "signInTitle": "Willkommen zurück",
+    "signUpTitle": "Konto erstellen",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "forgotPassword": "Passwort vergessen?",
+    "noAccount": "Kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "signUp": "Registrieren",
+    "signIn": "Anmelden"
+  },
+  "language": {
+    "select": "Sprache Auswählen",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}

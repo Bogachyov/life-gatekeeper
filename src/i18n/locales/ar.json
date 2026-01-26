@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "تسجيل الدخول",
+    "signOut": "تسجيل الخروج",
+    "getStarted": "ابدأ الآن",
+    "learnMore": "معرفة المزيد",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجاح",
+    "back": "رجوع",
+    "next": "التالي",
+    "submit": "إرسال",
+    "search": "بحث",
+    "filter": "تصفية",
+    "all": "الكل",
+    "none": "لا شيء",
+    "yes": "نعم",
+    "no": "لا"
+  },
+  "nav": {
+    "howItWorks": "كيف يعمل",
+    "pricing": "الأسعار",
+    "dashboard": "لوحة التحكم",
+    "wallet": "المحفظة",
+    "filtered": "مُصفى",
+    "autoReplies": "الردود التلقائية",
+    "settings": "الإعدادات",
+    "integrations": "التكاملات"
+  },
+  "hero": {
+    "title": "نظام تشغيل حياتك بالذكاء الاصطناعي",
+    "subtitle": "قم بتصفية الضوضاء، وركز على ما يهم، وتحكم في حياتك الرقمية بالأتمتة الذكية.",
+    "cta": "تجربة مجانية",
+    "ctaSecondary": "مشاهدة العرض"
+  },
+  "features": {
+    "title": "ميزات ذكية",
+    "subtitle": "كل ما تحتاجه لإدارة حياتك الرقمية بكفاءة"
+  },
+  "pricing": {
+    "title": "أسعار بسيطة وشفافة",
+    "subtitle": "اختر الخطة التي تناسبك",
+    "monthly": "شهري",
+    "yearly": "سنوي",
+    "perMonth": "/شهر",
+    "popular": "الأكثر شعبية",
+    "free": "مجاني",
+    "pro": "احترافي",
+    "enterprise": "للمؤسسات",
+    "getStarted": "ابدأ الآن",
+    "contactSales": "اتصل بالمبيعات"
+  },
+  "footer": {
+    "product": "المنتج",
+    "legal": "قانوني",
+    "company": "الشركة",
+    "support": "الدعم",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة",
+    "gdpr": "GDPR",
+    "copyright": "© {{year}} LifeOS. جميع الحقوق محفوظة."
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "subtitle": "إدارة حسابك وتفضيلاتك.",
+    "profile": "الملف الشخصي",
+    "email": "البريد الإلكتروني",
+    "emailHelp": "اتصل بالدعم لتغيير بريدك الإلكتروني.",
+    "notifications": "الإشعارات",
+    "emailNotifications": "إشعارات البريد الإلكتروني",
+    "emailNotificationsDesc": "استلم الملخصات اليومية والتصعيدات العاجلة",
+    "escalateUrgent": "تصعيد الرسائل العاجلة",
+    "escalateUrgentDesc": "احصل على إشعار فوري للعناصر ذات الأولوية العالية",
+    "aiPreferences": "تفضيلات الذكاء الاصطناعي",
+    "autoReply": "الرد التلقائي على الرسائل المُصفاة",
+    "autoReplyDesc": "دع الذكاء الاصطناعي يرسل رفضاً مهذباً تلقائياً",
+    "dangerZone": "منطقة الخطر",
+    "deleteAccount": "حذف الحساب",
+    "deleteAccountDesc": "حذف حسابك وجميع بياناتك نهائياً",
+    "saveChanges": "حفظ التغييرات",
+    "settingsSaved": "تم حفظ الإعدادات",
+    "settingsSavedDesc": "تم تحديث تفضيلاتك."
+  },
+  "wallet": {
+    "title": "المحفظة",
+    "balance": "الرصيد",
+    "pending": "قيد الانتظار",
+    "withdraw": "سحب",
+    "addPayoutMethod": "إضافة طريقة الدفع",
+    "transactions": "المعاملات",
+    "payoutMethods": "طرق الدفع"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "welcome": "مرحباً بعودتك",
+    "overview": "نظرة عامة",
+    "recentActivity": "النشاط الأخير"
+  },
+  "auth": {
+    "signInTitle": "مرحباً بعودتك",
+    "signUpTitle": "إنشاء حساب",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "noAccount": "ليس لديك حساب؟",
+    "hasAccount": "لديك حساب بالفعل؟",
+    "signUp": "تسجيل",
+    "signIn": "دخول"
+  },
+  "language": {
+    "select": "اختر اللغة",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}

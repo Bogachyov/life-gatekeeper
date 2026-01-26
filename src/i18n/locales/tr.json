@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "Giriş Yap",
+    "signOut": "Çıkış Yap",
+    "getStarted": "Başla",
+    "learnMore": "Daha Fazla Bilgi",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "back": "Geri",
+    "next": "İleri",
+    "submit": "Gönder",
+    "search": "Ara",
+    "filter": "Filtrele",
+    "all": "Tümü",
+    "none": "Hiçbiri",
+    "yes": "Evet",
+    "no": "Hayır"
+  },
+  "nav": {
+    "howItWorks": "Nasıl Çalışır",
+    "pricing": "Fiyatlar",
+    "dashboard": "Kontrol Paneli",
+    "wallet": "Cüzdan",
+    "filtered": "Filtrelenen",
+    "autoReplies": "Otomatik Yanıtlar",
+    "settings": "Ayarlar",
+    "integrations": "Entegrasyonlar"
+  },
+  "hero": {
+    "title": "Yapay Zeka Destekli Yaşam İşletim Sisteminiz",
+    "subtitle": "Gürültüyü filtreleyin, önemli olana odaklanın ve akıllı otomasyon ile dijital yaşamınızın kontrolünü elinize alın.",
+    "cta": "Ücretsiz Dene",
+    "ctaSecondary": "Demo İzle"
+  },
+  "features": {
+    "title": "Akıllı Özellikler",
+    "subtitle": "Dijital yaşamınızı verimli bir şekilde yönetmek için ihtiyacınız olan her şey"
+  },
+  "pricing": {
+    "title": "Basit, Şeffaf Fiyatlandırma",
+    "subtitle": "Size uygun planı seçin",
+    "monthly": "Aylık",
+    "yearly": "Yıllık",
+    "perMonth": "/ay",
+    "popular": "En Popüler",
+    "free": "Ücretsiz",
+    "pro": "Pro",
+    "enterprise": "Kurumsal",
+    "getStarted": "Başla",
+    "contactSales": "Satışla İletişime Geç"
+  },
+  "footer": {
+    "product": "Ürün",
+    "legal": "Yasal",
+    "company": "Şirket",
+    "support": "Destek",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Hizmet Şartları",
+    "gdpr": "KVKK",
+    "copyright": "© {{year}} LifeOS. Tüm hakları saklıdır."
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "subtitle": "Hesabınızı ve tercihlerinizi yönetin.",
+    "profile": "Profil",
+    "email": "E-posta",
+    "emailHelp": "E-postanızı değiştirmek için destek ile iletişime geçin.",
+    "notifications": "Bildirimler",
+    "emailNotifications": "E-posta bildirimleri",
+    "emailNotificationsDesc": "Günlük özetler ve acil eskalasyonlar alın",
+    "escalateUrgent": "Acil mesajları eskale et",
+    "escalateUrgentDesc": "Öncelikli öğeler için anında bildirim alın",
+    "aiPreferences": "Yapay Zeka Tercihleri",
+    "autoReply": "Filtrelenen mesajlara otomatik yanıt",
+    "autoReplyDesc": "Yapay zekanın otomatik olarak nazik redler göndermesine izin verin",
+    "dangerZone": "Tehlikeli Bölge",
+    "deleteAccount": "Hesabı sil",
+    "deleteAccountDesc": "Hesabınızı ve tüm verilerinizi kalıcı olarak silin",
+    "saveChanges": "Değişiklikleri Kaydet",
+    "settingsSaved": "Ayarlar kaydedildi",
+    "settingsSavedDesc": "Tercihleriniz güncellendi."
+  },
+  "wallet": {
+    "title": "Cüzdan",
+    "balance": "Bakiye",
+    "pending": "Beklemede",
+    "withdraw": "Çek",
+    "addPayoutMethod": "Ödeme Yöntemi Ekle",
+    "transactions": "İşlemler",
+    "payoutMethods": "Ödeme Yöntemleri"
+  },
+  "dashboard": {
+    "title": "Kontrol Paneli",
+    "welcome": "Tekrar hoş geldiniz",
+    "overview": "Genel Bakış",
+    "recentActivity": "Son Aktivite"
+  },
+  "auth": {
+    "signInTitle": "Tekrar hoş geldiniz",
+    "signUpTitle": "Hesap oluştur",
+    "email": "E-posta",
+    "password": "Şifre",
+    "forgotPassword": "Şifrenizi mi unuttunuz?",
+    "noAccount": "Hesabınız yok mu?",
+    "hasAccount": "Zaten hesabınız var mı?",
+    "signUp": "Kaydol",
+    "signIn": "Giriş yap"
+  },
+  "language": {
+    "select": "Dil Seç",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}
