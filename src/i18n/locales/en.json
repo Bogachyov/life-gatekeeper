@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "none": "None",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "nav": {
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard",
+    "wallet": "Wallet",
+    "filtered": "Filtered",
+    "autoReplies": "Auto-Replies",
+    "settings": "Settings",
+    "integrations": "Integrations"
+  },
+  "hero": {
+    "title": "Your AI-Powered Life Operating System",
+    "subtitle": "Filter the noise, focus on what matters, and take control of your digital life with intelligent automation.",
+    "cta": "Start Free Trial",
+    "ctaSecondary": "Watch Demo"
+  },
+  "features": {
+    "title": "Intelligent Features",
+    "subtitle": "Everything you need to manage your digital life efficiently"
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that works for you",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "perMonth": "/month",
+    "popular": "Most Popular",
+    "free": "Free",
+    "pro": "Pro",
+    "enterprise": "Enterprise",
+    "getStarted": "Get Started",
+    "contactSales": "Contact Sales"
+  },
+  "footer": {
+    "product": "Product",
+    "legal": "Legal",
+    "company": "Company",
+    "support": "Support",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "gdpr": "GDPR",
+    "copyright": "© {{year}} LifeOS. All rights reserved."
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Manage your account and preferences.",
+    "profile": "Profile",
+    "email": "Email",
+    "emailHelp": "Contact support to change your email address.",
+    "notifications": "Notifications",
+    "emailNotifications": "Email notifications",
+    "emailNotificationsDesc": "Receive daily digests and urgent escalations",
+    "escalateUrgent": "Escalate urgent messages",
+    "escalateUrgentDesc": "Get notified immediately for high-priority items",
+    "aiPreferences": "AI Preferences",
+    "autoReply": "Auto-reply to filtered messages",
+    "autoReplyDesc": "Let AI send polite declines automatically",
+    "dangerZone": "Danger Zone",
+    "deleteAccount": "Delete account",
+    "deleteAccountDesc": "Permanently delete your account and all data",
+    "saveChanges": "Save Changes",
+    "settingsSaved": "Settings saved",
+    "settingsSavedDesc": "Your preferences have been updated."
+  },
+  "wallet": {
+    "title": "Wallet",
+    "balance": "Balance",
+    "pending": "Pending",
+    "withdraw": "Withdraw",
+    "addPayoutMethod": "Add Payout Method",
+    "transactions": "Transactions",
+    "payoutMethods": "Payout Methods"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back",
+    "overview": "Overview",
+    "recentActivity": "Recent Activity"
+  },
+  "auth": {
+    "signInTitle": "Welcome back",
+    "signUpTitle": "Create an account",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signUp": "Sign up",
+    "signIn": "Sign in"
+  },
+  "language": {
+    "select": "Select Language",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}

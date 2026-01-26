@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "Iniciar Sesión",
+    "signOut": "Cerrar Sesión",
+    "getStarted": "Comenzar",
+    "learnMore": "Saber Más",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "submit": "Enviar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "all": "Todo",
+    "none": "Ninguno",
+    "yes": "Sí",
+    "no": "No"
+  },
+  "nav": {
+    "howItWorks": "Cómo Funciona",
+    "pricing": "Precios",
+    "dashboard": "Panel",
+    "wallet": "Cartera",
+    "filtered": "Filtrados",
+    "autoReplies": "Respuestas Automáticas",
+    "settings": "Configuración",
+    "integrations": "Integraciones"
+  },
+  "hero": {
+    "title": "Tu Sistema Operativo de Vida con IA",
+    "subtitle": "Filtra el ruido, enfócate en lo que importa y toma el control de tu vida digital con automatización inteligente.",
+    "cta": "Prueba Gratuita",
+    "ctaSecondary": "Ver Demo"
+  },
+  "features": {
+    "title": "Funciones Inteligentes",
+    "subtitle": "Todo lo que necesitas para gestionar tu vida digital eficientemente"
+  },
+  "pricing": {
+    "title": "Precios Simples y Transparentes",
+    "subtitle": "Elige el plan que funcione para ti",
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "perMonth": "/mes",
+    "popular": "Más Popular",
+    "free": "Gratis",
+    "pro": "Pro",
+    "enterprise": "Empresa",
+    "getStarted": "Comenzar",
+    "contactSales": "Contactar Ventas"
+  },
+  "footer": {
+    "product": "Producto",
+    "legal": "Legal",
+    "company": "Empresa",
+    "support": "Soporte",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "gdpr": "RGPD",
+    "copyright": "© {{year}} LifeOS. Todos los derechos reservados."
+  },
+  "settings": {
+    "title": "Configuración",
+    "subtitle": "Gestiona tu cuenta y preferencias.",
+    "profile": "Perfil",
+    "email": "Correo Electrónico",
+    "emailHelp": "Contacta soporte para cambiar tu correo.",
+    "notifications": "Notificaciones",
+    "emailNotifications": "Notificaciones por correo",
+    "emailNotificationsDesc": "Recibe resúmenes diarios y escalaciones urgentes",
+    "escalateUrgent": "Escalar mensajes urgentes",
+    "escalateUrgentDesc": "Recibe notificaciones inmediatas para elementos prioritarios",
+    "aiPreferences": "Preferencias de IA",
+    "autoReply": "Respuesta automática a mensajes filtrados",
+    "autoReplyDesc": "Deja que la IA envíe rechazos corteses automáticamente",
+    "dangerZone": "Zona de Peligro",
+    "deleteAccount": "Eliminar cuenta",
+    "deleteAccountDesc": "Eliminar permanentemente tu cuenta y todos los datos",
+    "saveChanges": "Guardar Cambios",
+    "settingsSaved": "Configuración guardada",
+    "settingsSavedDesc": "Tus preferencias han sido actualizadas."
+  },
+  "wallet": {
+    "title": "Cartera",
+    "balance": "Saldo",
+    "pending": "Pendiente",
+    "withdraw": "Retirar",
+    "addPayoutMethod": "Agregar Método de Pago",
+    "transactions": "Transacciones",
+    "payoutMethods": "Métodos de Pago"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "welcome": "Bienvenido de nuevo",
+    "overview": "Resumen",
+    "recentActivity": "Actividad Reciente"
+  },
+  "auth": {
+    "signInTitle": "Bienvenido de nuevo",
+    "signUpTitle": "Crear una cuenta",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "noAccount": "¿No tienes cuenta?",
+    "hasAccount": "¿Ya tienes cuenta?",
+    "signUp": "Registrarse",
+    "signIn": "Iniciar sesión"
+  },
+  "language": {
+    "select": "Seleccionar Idioma",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}

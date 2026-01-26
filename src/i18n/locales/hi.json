@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "साइन इन करें",
+    "signOut": "साइन आउट करें",
+    "getStarted": "शुरू करें",
+    "learnMore": "और जानें",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "back": "वापस",
+    "next": "अगला",
+    "submit": "जमा करें",
+    "search": "खोजें",
+    "filter": "फ़िल्टर",
+    "all": "सभी",
+    "none": "कोई नहीं",
+    "yes": "हां",
+    "no": "नहीं"
+  },
+  "nav": {
+    "howItWorks": "यह कैसे काम करता है",
+    "pricing": "मूल्य निर्धारण",
+    "dashboard": "डैशबोर्ड",
+    "wallet": "वॉलेट",
+    "filtered": "फ़िल्टर किया गया",
+    "autoReplies": "ऑटो-रिप्लाई",
+    "settings": "सेटिंग्स",
+    "integrations": "इंटीग्रेशन"
+  },
+  "hero": {
+    "title": "आपका AI-संचालित लाइफ ऑपरेटिंग सिस्टम",
+    "subtitle": "शोर को फ़िल्टर करें, महत्वपूर्ण बातों पर ध्यान दें, और बुद्धिमान ऑटोमेशन के साथ अपने डिजिटल जीवन पर नियंत्रण रखें।",
+    "cta": "मुफ्त ट्रायल शुरू करें",
+    "ctaSecondary": "डेमो देखें"
+  },
+  "features": {
+    "title": "बुद्धिमान विशेषताएं",
+    "subtitle": "अपने डिजिटल जीवन को कुशलतापूर्वक प्रबंधित करने के लिए आवश्यक सब कुछ"
+  },
+  "pricing": {
+    "title": "सरल, पारदर्शी मूल्य निर्धारण",
+    "subtitle": "वह प्लान चुनें जो आपके लिए काम करे",
+    "monthly": "मासिक",
+    "yearly": "वार्षिक",
+    "perMonth": "/महीना",
+    "popular": "सबसे लोकप्रिय",
+    "free": "मुफ्त",
+    "pro": "प्रो",
+    "enterprise": "एंटरप्राइज",
+    "getStarted": "शुरू करें",
+    "contactSales": "बिक्री से संपर्क करें"
+  },
+  "footer": {
+    "product": "उत्पाद",
+    "legal": "कानूनी",
+    "company": "कंपनी",
+    "support": "सहायता",
+    "privacy": "गोपनीयता नीति",
+    "terms": "सेवा की शर्तें",
+    "gdpr": "GDPR",
+    "copyright": "© {{year}} LifeOS. सर्वाधिकार सुरक्षित।"
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "subtitle": "अपना खाता और प्राथमिकताएं प्रबंधित करें।",
+    "profile": "प्रोफ़ाइल",
+    "email": "ईमेल",
+    "emailHelp": "अपना ईमेल बदलने के लिए सहायता से संपर्क करें।",
+    "notifications": "सूचनाएं",
+    "emailNotifications": "ईमेल सूचनाएं",
+    "emailNotificationsDesc": "दैनिक सारांश और तत्काल एस्केलेशन प्राप्त करें",
+    "escalateUrgent": "तत्काल संदेशों को एस्केलेट करें",
+    "escalateUrgentDesc": "उच्च-प्राथमिकता वाले आइटम के लिए तुरंत सूचित हों",
+    "aiPreferences": "AI प्राथमिकताएं",
+    "autoReply": "फ़िल्टर किए गए संदेशों का ऑटो-रिप्लाई",
+    "autoReplyDesc": "AI को स्वचालित रूप से विनम्र अस्वीकृति भेजने दें",
+    "dangerZone": "खतरे का क्षेत्र",
+    "deleteAccount": "खाता हटाएं",
+    "deleteAccountDesc": "अपना खाता और सभी डेटा स्थायी रूप से हटाएं",
+    "saveChanges": "परिवर्तन सहेजें",
+    "settingsSaved": "सेटिंग्स सहेजी गईं",
+    "settingsSavedDesc": "आपकी प्राथमिकताएं अपडेट की गई हैं।"
+  },
+  "wallet": {
+    "title": "वॉलेट",
+    "balance": "शेष राशि",
+    "pending": "लंबित",
+    "withdraw": "निकासी",
+    "addPayoutMethod": "भुगतान विधि जोड़ें",
+    "transactions": "लेनदेन",
+    "payoutMethods": "भुगतान विधियां"
+  },
+  "dashboard": {
+    "title": "डैशबोर्ड",
+    "welcome": "वापसी पर स्वागत है",
+    "overview": "अवलोकन",
+    "recentActivity": "हाल की गतिविधि"
+  },
+  "auth": {
+    "signInTitle": "वापसी पर स्वागत है",
+    "signUpTitle": "खाता बनाएं",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "forgotPassword": "पासवर्ड भूल गए?",
+    "noAccount": "खाता नहीं है?",
+    "hasAccount": "पहले से खाता है?",
+    "signUp": "साइन अप करें",
+    "signIn": "साइन इन करें"
+  },
+  "language": {
+    "select": "भाषा चुनें",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}

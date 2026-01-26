@@ -1,0 +1,132 @@
+{
+  "common": {
+    "signIn": "Se Connecter",
+    "signOut": "Se Déconnecter",
+    "getStarted": "Commencer",
+    "learnMore": "En Savoir Plus",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "back": "Retour",
+    "next": "Suivant",
+    "submit": "Soumettre",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "all": "Tout",
+    "none": "Aucun",
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "nav": {
+    "howItWorks": "Comment Ça Marche",
+    "pricing": "Tarifs",
+    "dashboard": "Tableau de Bord",
+    "wallet": "Portefeuille",
+    "filtered": "Filtrés",
+    "autoReplies": "Réponses Auto",
+    "settings": "Paramètres",
+    "integrations": "Intégrations"
+  },
+  "hero": {
+    "title": "Votre Système d'Exploitation de Vie avec IA",
+    "subtitle": "Filtrez le bruit, concentrez-vous sur l'essentiel et prenez le contrôle de votre vie numérique avec une automatisation intelligente.",
+    "cta": "Essai Gratuit",
+    "ctaSecondary": "Voir la Démo"
+  },
+  "features": {
+    "title": "Fonctionnalités Intelligentes",
+    "subtitle": "Tout ce dont vous avez besoin pour gérer efficacement votre vie numérique"
+  },
+  "pricing": {
+    "title": "Tarification Simple et Transparente",
+    "subtitle": "Choisissez le forfait qui vous convient",
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "perMonth": "/mois",
+    "popular": "Le Plus Populaire",
+    "free": "Gratuit",
+    "pro": "Pro",
+    "enterprise": "Entreprise",
+    "getStarted": "Commencer",
+    "contactSales": "Contacter les Ventes"
+  },
+  "footer": {
+    "product": "Produit",
+    "legal": "Légal",
+    "company": "Entreprise",
+    "support": "Support",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "gdpr": "RGPD",
+    "copyright": "© {{year}} LifeOS. Tous droits réservés."
+  },
+  "settings": {
+    "title": "Paramètres",
+    "subtitle": "Gérez votre compte et vos préférences.",
+    "profile": "Profil",
+    "email": "E-mail",
+    "emailHelp": "Contactez le support pour changer votre e-mail.",
+    "notifications": "Notifications",
+    "emailNotifications": "Notifications par e-mail",
+    "emailNotificationsDesc": "Recevez des résumés quotidiens et des escalades urgentes",
+    "escalateUrgent": "Escalader les messages urgents",
+    "escalateUrgentDesc": "Soyez notifié immédiatement pour les éléments prioritaires",
+    "aiPreferences": "Préférences IA",
+    "autoReply": "Réponse auto aux messages filtrés",
+    "autoReplyDesc": "Laissez l'IA envoyer des refus polis automatiquement",
+    "dangerZone": "Zone de Danger",
+    "deleteAccount": "Supprimer le compte",
+    "deleteAccountDesc": "Supprimer définitivement votre compte et toutes les données",
+    "saveChanges": "Enregistrer les Modifications",
+    "settingsSaved": "Paramètres enregistrés",
+    "settingsSavedDesc": "Vos préférences ont été mises à jour."
+  },
+  "wallet": {
+    "title": "Portefeuille",
+    "balance": "Solde",
+    "pending": "En Attente",
+    "withdraw": "Retirer",
+    "addPayoutMethod": "Ajouter une Méthode de Paiement",
+    "transactions": "Transactions",
+    "payoutMethods": "Méthodes de Paiement"
+  },
+  "dashboard": {
+    "title": "Tableau de Bord",
+    "welcome": "Bon retour",
+    "overview": "Aperçu",
+    "recentActivity": "Activité Récente"
+  },
+  "auth": {
+    "signInTitle": "Bon retour",
+    "signUpTitle": "Créer un compte",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié?",
+    "noAccount": "Vous n'avez pas de compte?",
+    "hasAccount": "Vous avez déjà un compte?",
+    "signUp": "S'inscrire",
+    "signIn": "Se connecter"
+  },
+  "language": {
+    "select": "Sélectionner la Langue",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ar": "العربية",
+    "hi": "हिन्दी",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "tr": "Türkçe"
+  }
+}
