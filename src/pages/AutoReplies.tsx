@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { User } from "@supabase/supabase-js";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Eye, RotateCcw } from "lucide-react";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
@@ -46,6 +47,7 @@ const autoReplies = [
 ];
 
 export default function AutoReplies() {
+  const { t } = useTranslation();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -84,9 +86,9 @@ export default function AutoReplies() {
     <DashboardLayout>
       <div className="p-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-serif font-bold mb-2">Auto-Replies</h1>
+          <h1 className="text-2xl font-serif font-bold mb-2">{t("nav.autoReplies")}</h1>
           <p className="text-muted-foreground">
-            Messages that were automatically responded to based on your preferences.
+            {t("settings.autoReplyDesc")}
           </p>
         </div>
 

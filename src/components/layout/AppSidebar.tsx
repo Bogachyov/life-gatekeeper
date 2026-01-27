@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   LayoutDashboard,
   Wallet,
@@ -6,6 +7,7 @@ import {
   MessageSquare,
   Settings,
   LogOut,
+  Link2,
 } from "lucide-react";
 import {
   Sidebar,
@@ -19,21 +21,23 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-const navItems = [
-  { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
-  { title: "Wallet", url: "/wallet", icon: Wallet },
-  { title: "Filtered", url: "/filtered", icon: Filter },
-  { title: "Auto-Replies", url: "/auto-replies", icon: MessageSquare },
-  { title: "Settings", url: "/settings", icon: Settings },
-];
-
 interface AppSidebarProps {
   onSignOut: () => void;
 }
 
 export function AppSidebar({ onSignOut }: AppSidebarProps) {
+  const { t } = useTranslation();
   const location = useLocation();
   const currentPath = location.pathname;
+
+  const navItems = [
+    { titleKey: "nav.dashboard", url: "/dashboard", icon: LayoutDashboard },
+    { titleKey: "nav.wallet", url: "/wallet", icon: Wallet },
+    { titleKey: "nav.filtered", url: "/filtered", icon: Filter },
+    { titleKey: "nav.autoReplies", url: "/auto-replies", icon: MessageSquare },
+    { titleKey: "nav.integrations", url: "/integrations", icon: Link2 },
+    { titleKey: "nav.settings", url: "/settings", icon: Settings },
+  ];
 
   const isActive = (path: string) => currentPath === path;
 
@@ -53,15 +57,15 @@ export function AppSidebar({ onSignOut }: AppSidebarProps) {
           <SidebarGroupContent>
             <SidebarMenu>
               {navItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
+                <SidebarMenuItem key={item.titleKey}>
                   <SidebarMenuButton
                     asChild
                     isActive={isActive(item.url)}
-                    tooltip={item.title}
+                    tooltip={t(item.titleKey)}
                   >
                     <Link to={item.url}>
                       <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
+                      <span>{t(item.titleKey)}</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -74,9 +78,9 @@ export function AppSidebar({ onSignOut }: AppSidebarProps) {
       <SidebarFooter className="p-2">
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton onClick={onSignOut} tooltip="Sign Out">
+            <SidebarMenuButton onClick={onSignOut} tooltip={t("common.signOut")}>
               <LogOut className="h-4 w-4" />
-              <span>Sign Out</span>
+              <span>{t("common.signOut")}</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

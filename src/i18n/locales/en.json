@@ -19,7 +19,12 @@
     "all": "All",
     "none": "None",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "connect": "Connect",
+    "connected": "Connected",
+    "notConnected": "Not connected",
+    "comingSoon": "Coming Soon",
+    "available": "Available"
   },
   "nav": {
     "howItWorks": "How It Works",
@@ -32,27 +37,52 @@
     "integrations": "Integrations"
   },
   "hero": {
-    "title": "Your AI-Powered Life Operating System",
-    "subtitle": "Filter the noise, focus on what matters, and take control of your digital life with intelligent automation.",
-    "cta": "Start Free Trial",
-    "ctaSecondary": "Watch Demo"
+    "badge": "AI-Powered Life Infrastructure",
+    "title1": "Your Life's",
+    "title2": "Gatekeeper",
+    "subtitle": "An AI that stands between you and the noise. Filter opportunities, protect your attention, and only see what truly matters.",
+    "cta": "Get Started",
+    "ctaSecondary": "See How It Works",
+    "gdprCompliant": "GDPR Compliant",
+    "aiFirst": "AI-First Architecture",
+    "privacyByDesign": "Privacy by Design"
   },
   "features": {
-    "title": "Intelligent Features",
-    "subtitle": "Everything you need to manage your digital life efficiently"
+    "title1": "How",
+    "title2": "LifeOS",
+    "title3": "Works",
+    "subtitle": "A new operating system for life. Not another productivity app—a decision infrastructure that protects your most valuable resource: attention.",
+    "intelligentFiltering": "Intelligent Filtering",
+    "intelligentFilteringDesc": "AI classifies every inbound message into ignore, review, or escalate based on your unique decision profile.",
+    "decisionProfile": "Decision Profile",
+    "decisionProfileDesc": "Define your goals, values, and boundaries. The AI learns what truly matters to you and filters accordingly.",
+    "highLeverageFocus": "High-Leverage Focus",
+    "highLeverageFocusDesc": "Only see opportunities that align with your short and long-term objectives. No more noise.",
+    "smartAutoResponses": "Smart Auto-Responses",
+    "smartAutoResponsesDesc": "Polite, customizable auto-replies handle low-priority requests while you focus on what matters.",
+    "executiveDashboard": "Executive Dashboard",
+    "executiveDashboardDesc": "Clean, calm interface showing today's top opportunities with AI reasoning and suggested actions.",
+    "privacyFirst": "Privacy-First",
+    "privacyFirstDesc": "Your data is encrypted, GDPR compliant, and never shared. You control what the AI sees."
   },
   "pricing": {
-    "title": "Simple, Transparent Pricing",
-    "subtitle": "Choose the plan that works for you",
+    "title1": "Simple,",
+    "title2": "Transparent",
+    "title3": "Pricing",
+    "subtitle": "Start free and upgrade when you're ready. Cancel anytime.",
     "monthly": "Monthly",
     "yearly": "Yearly",
     "perMonth": "/month",
     "popular": "Most Popular",
-    "free": "Free",
-    "pro": "Pro",
-    "enterprise": "Enterprise",
+    "basic": "Basic",
+    "basicDesc": "Get started with essential filtering",
+    "advanced": "Advanced",
+    "advancedDesc": "Full AI-powered opportunity filtering",
+    "premium": "Premium",
+    "premiumDesc": "White-glove experience for executives",
+    "startFree": "Start Free",
     "getStarted": "Get Started",
-    "contactSales": "Contact Sales"
+    "allPlansInclude": "All plans include: Secure data encryption • GDPR compliance • Cancel anytime"
   },
   "footer": {
     "product": "Product",
@@ -62,12 +92,18 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "gdpr": "GDPR",
-    "copyright": "© {{year}} LifeOS. All rights reserved."
+    "copyright": "© {{year}} LifeOS. All rights reserved.",
+    "description": "The first layer of a new operating system for life. AI that protects your attention and surfaces what truly matters."
   },
   "settings": {
     "title": "Settings",
     "subtitle": "Manage your account and preferences.",
     "profile": "Profile",
+    "nickname": "Nickname",
+    "nicknamePlaceholder": "Enter your nickname",
+    "profilePhoto": "Profile Photo",
+    "uploadPhoto": "Upload Photo",
+    "removePhoto": "Remove",
     "email": "Email",
     "emailHelp": "Contact support to change your email address.",
     "notifications": "Notifications",
@@ -78,27 +114,63 @@
     "aiPreferences": "AI Preferences",
     "autoReply": "Auto-reply to filtered messages",
     "autoReplyDesc": "Let AI send polite declines automatically",
+    "languagePreference": "Language Preference",
+    "languagePreferenceDesc": "All notifications will be sent in this language",
     "dangerZone": "Danger Zone",
     "deleteAccount": "Delete account",
     "deleteAccountDesc": "Permanently delete your account and all data",
     "saveChanges": "Save Changes",
     "settingsSaved": "Settings saved",
-    "settingsSavedDesc": "Your preferences have been updated."
+    "settingsSavedDesc": "Your preferences have been updated.",
+    "profileUpdated": "Profile updated",
+    "profileUpdatedDesc": "Your profile has been saved."
   },
   "wallet": {
     "title": "Wallet",
-    "balance": "Balance",
+    "balance": "Available Balance",
     "pending": "Pending",
-    "withdraw": "Withdraw",
+    "withdraw": "Withdraw Funds",
     "addPayoutMethod": "Add Payout Method",
-    "transactions": "Transactions",
-    "payoutMethods": "Payout Methods"
+    "transactions": "Recent Transactions",
+    "payoutMethods": "Payout Methods",
+    "noMethods": "No payout methods added yet",
+    "noTransactions": "No transactions yet",
+    "withdrawalRequested": "Withdrawal requested",
+    "withdrawalDesc": "Your withdrawal of ${{amount}} has been submitted.",
+    "processingTime": "Withdrawals are typically processed within 1-3 business days."
   },
   "dashboard": {
     "title": "Dashboard",
-    "welcome": "Welcome back",
-    "overview": "Overview",
-    "recentActivity": "Recent Activity"
+    "greeting": "Good morning",
+    "subtitle": "Here's what matters today",
+    "filteredToday": "Filtered Today",
+    "escalated": "Escalated",
+    "autoReplied": "Auto-Replied",
+    "highPriority": "High priority",
+    "savedTime": "Saved {{hours}}h",
+    "aiReport": "Today's AI Report",
+    "aiReportContent": "Processed {{messages}} messages across Gmail and LinkedIn. {{opportunities}} high-priority opportunities match your decision profile. {{declined}} low-value requests were auto-declined with polite responses.",
+    "priorityOpportunities": "Priority Opportunities",
+    "viewAll": "View all",
+    "connectedIntegrations": "Connected Integrations",
+    "forReview": "For Review",
+    "aiReasoning": "AI Reasoning"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Mark all read",
+    "noNotifications": "No notifications",
+    "newOpportunity": "New high-priority opportunity",
+    "autoReplySent": "Auto-reply sent",
+    "withdrawalComplete": "Withdrawal completed"
+  },
+  "integrations": {
+    "title": "Integrations",
+    "subtitle": "Connect your favorite tools and let LifeOS intelligently manage your digital life.",
+    "messengers": "Messengers",
+    "socialNetworks": "Social Networks",
+    "email": "Email",
+    "productivity": "Productivity"
   },
   "auth": {
     "signInTitle": "Welcome back",

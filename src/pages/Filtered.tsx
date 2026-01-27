@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { User } from "@supabase/supabase-js";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Archive, Trash2, Eye } from "lucide-react";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
@@ -42,6 +43,7 @@ const filteredMessages = [
 ];
 
 export default function Filtered() {
+  const { t } = useTranslation();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -80,9 +82,9 @@ export default function Filtered() {
     <DashboardLayout>
       <div className="p-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-serif font-bold mb-2">Filtered Messages</h1>
+          <h1 className="text-2xl font-serif font-bold mb-2">{t("nav.filtered")}</h1>
           <p className="text-muted-foreground">
-            Messages that didn't match your priority criteria. Review or permanently delete them.
+            {t("dashboard.aiReportContent", { messages: 47, opportunities: 3, declined: 28 }).split(".")[0]}.
           </p>
         </div>
 
