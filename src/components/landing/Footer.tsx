@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { forwardRef } from "react";
 
-export function Footer() {
+export const Footer = forwardRef<HTMLElement>((props, ref) => {
+  const { t } = useTranslation();
+  
   return (
-    <footer className="border-t border-border/50 py-16">
+    <footer className="border-t border-border/50 py-16" ref={ref}>
       <div className="container px-4">
         <div className="grid md:grid-cols-4 gap-12">
           {/* Brand */}
@@ -14,31 +18,30 @@ export function Footer() {
               <span className="text-xl font-serif font-semibold">LifeOS</span>
             </Link>
             <p className="text-muted-foreground max-w-sm mb-6">
-              The first layer of a new operating system for life. 
-              AI that protects your attention and surfaces what truly matters.
+              {t("footer.description")}
             </p>
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} LifeOS. All rights reserved.
+              {t("footer.copyright", { year: new Date().getFullYear() })}
             </p>
           </div>
 
           {/* Product */}
           <div>
-            <h4 className="font-semibold mb-4">Product</h4>
+            <h4 className="font-semibold mb-4">{t("footer.product")}</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  How It Works
+                  {t("nav.howItWorks")}
                 </a>
               </li>
               <li>
                 <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Pricing
+                  {t("nav.pricing")}
                 </a>
               </li>
               <li>
                 <Link to="/integrations" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Integrations
+                  {t("nav.integrations")}
                 </Link>
               </li>
             </ul>
@@ -46,21 +49,21 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
+            <h4 className="font-semibold mb-4">{t("footer.legal")}</h4>
             <ul className="space-y-3">
               <li>
                 <Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Privacy Policy
+                  {t("footer.privacy")}
                 </Link>
               </li>
               <li>
                 <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Terms of Service
+                  {t("footer.terms")}
                 </Link>
               </li>
               <li>
                 <Link to="/gdpr" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  GDPR
+                  {t("footer.gdpr")}
                 </Link>
               </li>
             </ul>
@@ -69,4 +72,6 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+});
+
+Footer.displayName = "Footer";

@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { forwardRef } from "react";
 
 const plans = [
   {
-    name: "Basic",
-    price: "$29",
+    nameKey: "pricing.basic",
+    price: "$1",
     period: "/month",
-    description: "Get started with essential filtering",
+    descriptionKey: "pricing.basicDesc",
     features: [
       "Manual filtering controls",
       "Limited AI summaries",
@@ -15,14 +17,14 @@ const plans = [
       "30-day message memory",
       "Basic dashboard",
     ],
-    cta: "Start Free",
+    ctaKey: "pricing.startFree",
     popular: false,
   },
   {
-    name: "Advanced",
+    nameKey: "pricing.advanced",
     price: "$49",
     period: "/month",
-    description: "Full AI-powered opportunity filtering",
+    descriptionKey: "pricing.advancedDesc",
     features: [
       "Full AI filtering & classification",
       "Multiple integrations",
@@ -32,14 +34,14 @@ const plans = [
       "Advanced insights",
       "Email + chat support",
     ],
-    cta: "Get Started",
+    ctaKey: "pricing.getStarted",
     popular: true,
   },
   {
-    name: "Premium",
+    nameKey: "pricing.premium",
     price: "$99",
     period: "/month",
-    description: "White-glove experience for executives",
+    descriptionKey: "pricing.premiumDesc",
     features: [
       "Everything in Advanced",
       "White-glove onboarding",
@@ -49,32 +51,34 @@ const plans = [
       "Early access to agent features",
       "Dedicated support",
     ],
-    cta: "Get Started",
+    ctaKey: "pricing.getStarted",
     popular: false,
   },
 ];
 
-export function Pricing() {
+export const Pricing = forwardRef<HTMLElement>((props, ref) => {
+  const { t } = useTranslation();
+  
   return (
-    <section id="pricing" className="relative py-32">
+    <section id="pricing" className="relative py-32" ref={ref}>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
       
       <div className="container relative z-10 px-4">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-            <span className="text-foreground">Simple,</span>{" "}
-            <span className="text-gradient-gold">Transparent</span>{" "}
-            <span className="text-foreground">Pricing</span>
+            <span className="text-foreground">{t("pricing.title1")}</span>{" "}
+            <span className="text-gradient-gold">{t("pricing.title2")}</span>{" "}
+            <span className="text-foreground">{t("pricing.title3")}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Start free and upgrade when you're ready. Cancel anytime.
+            {t("pricing.subtitle")}
           </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <div
-              key={plan.name}
+              key={plan.nameKey}
               className={`relative rounded-2xl p-8 transition-all duration-300 animate-fade-in ${
                 plan.popular
                   ? "bg-card border-2 border-primary shadow-gold-lg scale-105"
@@ -86,18 +90,18 @@ export function Pricing() {
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium">
                     <Sparkles className="w-4 h-4" />
-                    Most Popular
+                    {t("pricing.popular")}
                   </div>
                 </div>
               )}
               
               <div className="mb-6">
-                <h3 className="text-xl font-semibold font-serif mb-2">{plan.name}</h3>
+                <h3 className="text-xl font-semibold font-serif mb-2">{t(plan.nameKey)}</h3>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold text-gradient-gold">{plan.price}</span>
-                  {plan.period && <span className="text-muted-foreground">{plan.period}</span>}
+                  {plan.period && <span className="text-muted-foreground">{t("pricing.perMonth")}</span>}
                 </div>
-                <p className="text-muted-foreground mt-2 text-sm">{plan.description}</p>
+                <p className="text-muted-foreground mt-2 text-sm">{t(plan.descriptionKey)}</p>
               </div>
               
               <ul className="space-y-3 mb-8">
@@ -114,7 +118,7 @@ export function Pricing() {
                 className="w-full"
                 asChild
               >
-                <Link to="/auth">{plan.cta}</Link>
+                <Link to="/auth">{t(plan.ctaKey)}</Link>
               </Button>
             </div>
           ))}
@@ -122,10 +126,12 @@ export function Pricing() {
         
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground">
-            All plans include: Secure data encryption • GDPR compliance • Cancel anytime
+            {t("pricing.allPlansInclude")}
           </p>
         </div>
       </div>
     </section>
   );
-}
+});
+
+Pricing.displayName = "Pricing";

@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export function Hero() {
+  const { t } = useTranslation();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background gradient */}
@@ -28,34 +31,33 @@ export function Hero() {
           <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full glass animate-fade-in">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-muted-foreground">
-              AI-Powered Life Infrastructure
+              {t("hero.badge")}
             </span>
           </div>
           
           {/* Main headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 animate-fade-in animation-delay-100">
-            <span className="text-foreground">Your Life's</span>
+            <span className="text-foreground">{t("hero.title1")}</span>
             <br />
-            <span className="text-gradient-gold">Gatekeeper</span>
+            <span className="text-gradient-gold">{t("hero.title2")}</span>
           </h1>
           
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in animation-delay-200">
-            An AI that stands between you and the noise. Filter opportunities, 
-            protect your attention, and only see what truly matters.
+            {t("hero.subtitle")}
           </p>
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in animation-delay-300">
             <Button variant="hero" size="xl" asChild>
               <Link to="/auth">
-                Get Started
+                {t("hero.cta")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
             <Button variant="glass" size="lg" asChild>
               <a href="#how-it-works">
-                See How It Works
+                {t("hero.ctaSecondary")}
               </a>
             </Button>
           </div>
@@ -64,14 +66,14 @@ export function Hero() {
           <div className="flex flex-wrap items-center justify-center gap-8 text-muted-foreground animate-fade-in animation-delay-400">
             <div className="flex items-center gap-2">
               <Shield className="w-5 h-5 text-primary" />
-              <span className="text-sm">GDPR Compliant</span>
+              <span className="text-sm">{t("hero.gdprCompliant")}</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-success animate-pulse" />
-              <span className="text-sm">AI-First Architecture</span>
+              <span className="text-sm">{t("hero.aiFirst")}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sm">Privacy by Design</span>
+              <span className="text-sm">{t("hero.privacyByDesign")}</span>
             </div>
           </div>
         </div>

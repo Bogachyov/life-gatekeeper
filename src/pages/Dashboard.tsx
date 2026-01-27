@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { User } from "@supabase/supabase-js";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import {
   Filter,
   MessageSquare,
-  Bell,
   ChevronRight,
   Sparkles,
   TrendingUp,
@@ -15,6 +15,8 @@ import {
   Clock,
 } from "lucide-react";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
+import { NotificationsPanel } from "@/components/notifications/NotificationsPanel";
+import { ProfileMenu } from "@/components/profile/ProfileMenu";
 
 // Sample data for demo
 const opportunities = [
@@ -53,16 +55,17 @@ const opportunities = [
   },
 ];
 
-const stats = [
-  { label: "Filtered Today", value: "47", icon: Filter, change: "+12%" },
-  { label: "Escalated", value: "3", icon: TrendingUp, change: "High priority" },
-  { label: "Auto-Replied", value: "28", icon: MessageSquare, change: "Saved 2h" },
-];
-
 export default function Dashboard() {
+  const { t } = useTranslation();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  const stats = [
+    { label: t("dashboard.filteredToday"), value: "47", icon: Filter, change: "+12%" },
+    { label: t("dashboard.escalated"), value: "3", icon: TrendingUp, change: t("dashboard.highPriority") },
+    { label: t("dashboard.autoReplied"), value: "28", icon: MessageSquare, change: t("dashboard.savedTime", { hours: "2" }) },
+  ];
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
@@ -86,6 +89,11 @@ export default function Dashboard() {
     return () => subscription.unsubscribe();
   }, [navigate]);
 
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    navigate("/");
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -99,19 +107,12 @@ export default function Dashboard() {
       {/* Top bar content */}
       <div className="border-b border-border/50 px-6 py-4 flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-serif font-bold">Good morning</h1>
-          <p className="text-muted-foreground">Here's what matters today</p>
+          <h1 className="text-2xl font-serif font-bold">{t("dashboard.greeting")}</h1>
+          <p className="text-muted-foreground">{t("dashboard.subtitle")}</p>
         </div>
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="icon" className="relative">
-            <Bell className="w-5 h-5" />
-            <span className="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full" />
-          </Button>
-          <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-            <span className="text-sm font-medium">
-              {user?.email?.charAt(0).toUpperCase()}
-            </span>
-          </div>
+          <NotificationsPanel />
+          <ProfileMenu user={user} onSignOut={handleSignOut} />
         </div>
       </div>
 
@@ -144,11 +145,9 @@ export default function Dashboard() {
               <Sparkles className="w-6 h-6 text-primary-foreground" />
             </div>
             <div>
-              <h2 className="text-lg font-semibold mb-2">Today's AI Report</h2>
+              <h2 className="text-lg font-semibold mb-2">{t("dashboard.aiReport")}</h2>
               <p className="text-muted-foreground">
-                Processed <span className="text-foreground font-medium">47 messages</span> across 
-                Gmail and LinkedIn. <span className="text-foreground font-medium">3 high-priority opportunities</span> 
-                {" "}match your decision profile. 28 low-value requests were auto-declined with polite responses.
+                {t("dashboard.aiReportContent", { messages: 47, opportunities: 3, declined: 28 })}
               </p>
             </div>
           </div>
@@ -157,9 +156,9 @@ export default function Dashboard() {
         {/* Opportunities */}
         <div>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold">Priority Opportunities</h2>
+            <h2 className="text-lg font-semibold">{t("dashboard.priorityOpportunities")}</h2>
             <Button variant="ghost" size="sm" className="text-muted-foreground">
-              View all
+              {t("dashboard.viewAll")}
               <ChevronRight className="w-4 h-4 ml-1" />
             </Button>
           </div>
@@ -180,7 +179,7 @@ export default function Dashboard() {
                             : "bg-secondary text-muted-foreground"
                         }`}
                       >
-                        {opp.type === "escalated" ? "Escalated" : "For Review"}
+                        {opp.type === "escalated" ? t("dashboard.escalated") : t("dashboard.forReview")}
                       </span>
                       <span className="text-xs text-muted-foreground flex items-center gap-1">
                         <Clock className="w-3 h-3" />
@@ -195,7 +194,7 @@ export default function Dashboard() {
                     <div className="flex items-start gap-2 p-3 rounded-lg bg-secondary/50">
                       <Sparkles className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                       <p className="text-sm text-muted-foreground">
-                        <span className="text-foreground font-medium">AI Reasoning: </span>
+                        <span className="text-foreground font-medium">{t("dashboard.aiReasoning")}: </span>
                         {opp.aiReason}
                       </p>
                     </div>
@@ -216,7 +215,7 @@ export default function Dashboard() {
 
         {/* Integration status */}
         <div className="bg-card rounded-xl border border-border/50 p-6">
-          <h2 className="text-lg font-semibold mb-4">Connected Integrations</h2>
+          <h2 className="text-lg font-semibold mb-4">{t("dashboard.connectedIntegrations")}</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
               <div className="flex items-center gap-3">
@@ -225,10 +224,10 @@ export default function Dashboard() {
                 </div>
                 <div>
                   <p className="font-medium">Gmail</p>
-                  <p className="text-sm text-muted-foreground">Not connected</p>
+                  <p className="text-sm text-muted-foreground">{t("common.notConnected")}</p>
                 </div>
               </div>
-              <Button variant="outline" size="sm">Connect</Button>
+              <Button variant="outline" size="sm">{t("common.connect")}</Button>
             </div>
             <div className="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
               <div className="flex items-center gap-3">
@@ -237,10 +236,10 @@ export default function Dashboard() {
                 </div>
                 <div>
                   <p className="font-medium">LinkedIn</p>
-                  <p className="text-sm text-muted-foreground">Not connected</p>
+                  <p className="text-sm text-muted-foreground">{t("common.notConnected")}</p>
                 </div>
               </div>
-              <Button variant="outline" size="sm">Connect</Button>
+              <Button variant="outline" size="sm">{t("common.connect")}</Button>
             </div>
           </div>
         </div>

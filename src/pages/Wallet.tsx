@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { User } from "@supabase/supabase-js";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import {
   ArrowDownUp,
@@ -24,6 +25,7 @@ import { WithdrawDialog } from "@/components/wallet/WithdrawDialog";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 
 export default function Wallet() {
+  const { t } = useTranslation();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [showAddMethod, setShowAddMethod] = useState(false);
@@ -81,7 +83,7 @@ export default function Wallet() {
     if (!user) return;
     await deletePayoutMethod.mutateAsync({ id, userId: user.id });
     toast({
-      title: "Removed",
+      title: t("common.delete"),
       description: "Payout method has been removed.",
     });
   };
@@ -113,11 +115,11 @@ export default function Wallet() {
         <div className="flex gap-3">
           <Button onClick={() => setShowWithdraw(true)} className="flex-1 md:flex-none">
             <ArrowDownUp className="w-4 h-4 mr-2" />
-            Withdraw Funds
+            {t("wallet.withdraw")}
           </Button>
           <Button variant="outline" onClick={() => setShowAddMethod(true)} className="flex-1 md:flex-none">
             <Plus className="w-4 h-4 mr-2" />
-            Add Payout Method
+            {t("wallet.addPayoutMethod")}
           </Button>
         </div>
 
@@ -125,7 +127,7 @@ export default function Wallet() {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Payout Methods */}
           <div className="bg-card rounded-xl border border-border/50 p-6">
-            <h2 className="text-lg font-semibold mb-4">Payout Methods</h2>
+            <h2 className="text-lg font-semibold mb-4">{t("wallet.payoutMethods")}</h2>
             <PayoutMethodsList
               methods={payoutMethods}
               isLoading={methodsLoading}
@@ -136,7 +138,7 @@ export default function Wallet() {
 
           {/* Transaction History */}
           <div className="bg-card rounded-xl border border-border/50 p-6">
-            <h2 className="text-lg font-semibold mb-4">Recent Transactions</h2>
+            <h2 className="text-lg font-semibold mb-4">{t("wallet.transactions")}</h2>
             <TransactionHistory transactions={transactions} isLoading={txLoading} />
           </div>
         </div>
