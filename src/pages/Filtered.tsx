@@ -113,13 +113,28 @@ export default function Filtered() {
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Button variant="ghost" size="icon" title="View">
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    title="View"
+                    onClick={() => console.log("View message:", message.id)}
+                  >
                     <Eye className="w-4 h-4" />
                   </Button>
-                  <Button variant="ghost" size="icon" title="Archive">
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    title="Archive"
+                    onClick={() => console.log("Archive message:", message.id)}
+                  >
                     <Archive className="w-4 h-4" />
                   </Button>
-                  <Button variant="ghost" size="icon" title="Delete">
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    title="Delete"
+                    onClick={() => console.log("Delete message:", message.id)}
+                  >
                     <Trash2 className="w-4 h-4" />
                   </Button>
                 </div>

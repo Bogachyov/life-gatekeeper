@@ -23,6 +23,7 @@ import { TransactionHistory } from "@/components/wallet/TransactionHistory";
 import { AddPayoutMethodDialog } from "@/components/wallet/AddPayoutMethodDialog";
 import { WithdrawDialog } from "@/components/wallet/WithdrawDialog";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
+import { isAdminEmail } from "@/hooks/useAdminCheck";
 
 export default function Wallet() {
   const { t } = useTranslation();
@@ -48,6 +49,9 @@ export default function Wallet() {
         setLoading(false);
         if (!session) {
           navigate("/auth");
+        } else if (!isAdminEmail(session.user.email)) {
+          // Redirect non-admin users to dashboard
+          navigate("/dashboard");
         }
       }
     );
@@ -57,6 +61,9 @@ export default function Wallet() {
       setLoading(false);
       if (!session) {
         navigate("/auth");
+      } else if (!isAdminEmail(session.user.email)) {
+        // Redirect non-admin users to dashboard
+        navigate("/dashboard");
       }
     });
 

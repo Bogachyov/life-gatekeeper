@@ -11,8 +11,16 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { SubscriptionManager } from "@/components/subscription/SubscriptionManager";
+import { DeleteAccountDialog } from "@/components/settings/DeleteAccountDialog";
 import { useToast } from "@/hooks/use-toast";
 import { Camera, X } from "lucide-react";
+import { 
+  useSubscription, 
+  useCreateSubscription, 
+  useUpdateSubscription, 
+  useCancelSubscription 
+} from "@/hooks/useSubscription";
 
 export default function Settings() {
   const { t } = useTranslation();
@@ -24,12 +32,18 @@ export default function Settings() {
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [autoReplyEnabled, setAutoReplyEnabled] = useState(true);
   const [escalateUrgent, setEscalateUrgent] = useState(true);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  const { data: subscription, isLoading: subLoading } = useSubscription(user?.id);
+  const createSubscription = useCreateSubscription();
+  const updateSubscription = useUpdateSubscription();
+  const cancelSubscription = useCancelSubscription();
+
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+    const { data: { subscription: authSub } } = supabase.auth.onAuthStateChange(
       (event, session) => {
         setUser(session?.user ?? null);
         setLoading(false);
@@ -45,12 +59,11 @@ export default function Settings() {
       if (!session) {
         navigate("/auth");
       } else {
-        // Fetch profile
         fetchProfile(session.user.id);
       }
     });
 
-    return () => subscription.unsubscribe();
+    return () => authSub.unsubscribe();
   }, [navigate]);
 
   const fetchProfile = async (userId: string) => {
@@ -92,7 +105,6 @@ export default function Settings() {
     
     setSaving(true);
     try {
-      // Update or insert profile
       const { error } = await supabase
         .from("profiles")
         .upsert({
@@ -117,6 +129,56 @@ export default function Settings() {
       });
     } finally {
       setSaving(false);
+    }
+  };
+
+  const handleChangePlan = async (planId: string) => {
+    if (!user) return;
+
+    try {
+      if (subscription) {
+        await updateSubscription.mutateAsync({
+          userId: user.id,
+          planType: planId,
+          status: planId === 'basic' ? 'trialing' : 'active',
+        });
+      } else {
+        await createSubscription.mutateAsync({
+          userId: user.id,
+          planType: planId,
+        });
+      }
+
+      toast({
+        title: t("subscription.planUpdated"),
+        description: t("subscription.planUpdatedDesc"),
+      });
+    } catch (error) {
+      console.error("Error updating plan:", error);
+      toast({
+        title: t("common.error"),
+        description: "Failed to update plan",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleCancelSubscription = async () => {
+    if (!user) return;
+
+    try {
+      await cancelSubscription.mutateAsync({ userId: user.id });
+      toast({
+        title: t("subscription.planCanceled"),
+        description: t("subscription.planCanceledDesc"),
+      });
+    } catch (error) {
+      console.error("Error canceling subscription:", error);
+      toast({
+        title: t("common.error"),
+        description: "Failed to cancel subscription",
+        variant: "destructive",
+      });
     }
   };
 
@@ -214,6 +276,23 @@ export default function Settings() {
             </div>
           </section>
 
+          {/* Subscription Section */}
+          <section className="bg-card rounded-xl border border-border/50 p-6">
+            <h2 className="text-lg font-semibold mb-4">{t("settings.subscription")}</h2>
+            {subLoading ? (
+              <div className="flex items-center justify-center py-8">
+                <div className="w-6 h-6 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+              </div>
+            ) : (
+              <SubscriptionManager
+                subscription={subscription || null}
+                onChangePlan={handleChangePlan}
+                onCancelSubscription={handleCancelSubscription}
+                loading={createSubscription.isPending || updateSubscription.isPending || cancelSubscription.isPending}
+              />
+            )}
+          </section>
+
           {/* Language Preference Section */}
           <section className="bg-card rounded-xl border border-border/50 p-6">
             <h2 className="text-lg font-semibold mb-4">{t("settings.languagePreference")}</h2>
@@ -290,7 +369,11 @@ export default function Settings() {
                     {t("settings.deleteAccountDesc")}
                   </p>
                 </div>
-                <Button variant="destructive" size="sm">
+                <Button 
+                  variant="destructive" 
+                  size="sm"
+                  onClick={() => setShowDeleteDialog(true)}
+                >
                   {t("common.delete")}
                 </Button>
               </div>
@@ -304,6 +387,12 @@ export default function Settings() {
           </div>
         </div>
       </div>
+
+      <DeleteAccountDialog
+        open={showDeleteDialog}
+        onOpenChange={setShowDeleteDialog}
+        userEmail={user?.email || ""}
+      />
     </DashboardLayout>
   );
 }

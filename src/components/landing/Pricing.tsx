@@ -7,7 +7,7 @@ import { forwardRef } from "react";
 const plans = [
   {
     nameKey: "pricing.basic",
-    price: "$1",
+    price: "$29",
     period: "/month",
     descriptionKey: "pricing.basicDesc",
     features: [
@@ -19,10 +19,11 @@ const plans = [
     ],
     ctaKey: "pricing.startFree",
     popular: false,
+    trialDays: 7,
   },
   {
     nameKey: "pricing.advanced",
-    price: "$49",
+    price: "$1",
     period: "/month",
     descriptionKey: "pricing.advancedDesc",
     features: [
@@ -102,6 +103,11 @@ export const Pricing = forwardRef<HTMLElement>((props, ref) => {
                   {plan.period && <span className="text-muted-foreground">{t("pricing.perMonth")}</span>}
                 </div>
                 <p className="text-muted-foreground mt-2 text-sm">{t(plan.descriptionKey)}</p>
+                {(plan as any).trialDays && (
+                  <p className="text-primary text-xs mt-1 font-medium">
+                    {t("pricing.freeTrial")}
+                  </p>
+                )}
               </div>
               
               <ul className="space-y-3 mb-8">
