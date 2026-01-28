@@ -157,7 +157,12 @@ export default function Dashboard() {
         <div>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold">{t("dashboard.priorityOpportunities")}</h2>
-            <Button variant="ghost" size="sm" className="text-muted-foreground">
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="text-muted-foreground"
+              onClick={() => navigate("/filtered")}
+            >
               {t("dashboard.viewAll")}
               <ChevronRight className="w-4 h-4 ml-1" />
             </Button>
@@ -200,10 +205,26 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <Button variant="default" size="sm">
+                    <Button 
+                      variant="default" 
+                      size="sm"
+                      onClick={() => {
+                        // Handle accept opportunity
+                        console.log("Accepted opportunity:", opp.id);
+                      }}
+                      title={t("dashboard.acceptOpportunity")}
+                    >
                       <Check className="w-4 h-4" />
                     </Button>
-                    <Button variant="outline" size="sm">
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      onClick={() => {
+                        // Handle decline opportunity
+                        console.log("Declined opportunity:", opp.id);
+                      }}
+                      title={t("dashboard.declineOpportunity")}
+                    >
                       <X className="w-4 h-4" />
                     </Button>
                   </div>
@@ -227,7 +248,13 @@ export default function Dashboard() {
                   <p className="text-sm text-muted-foreground">{t("common.notConnected")}</p>
                 </div>
               </div>
-              <Button variant="outline" size="sm">{t("common.connect")}</Button>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => navigate("/integrations")}
+              >
+                {t("common.connect")}
+              </Button>
             </div>
             <div className="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
               <div className="flex items-center gap-3">
@@ -239,7 +266,13 @@ export default function Dashboard() {
                   <p className="text-sm text-muted-foreground">{t("common.notConnected")}</p>
                 </div>
               </div>
-              <Button variant="outline" size="sm">{t("common.connect")}</Button>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => navigate("/integrations")}
+              >
+                {t("common.connect")}
+              </Button>
             </div>
           </div>
         </div>

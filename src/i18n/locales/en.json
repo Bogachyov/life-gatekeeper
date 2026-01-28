@@ -80,9 +80,10 @@
     "advancedDesc": "Full AI-powered opportunity filtering",
     "premium": "Premium",
     "premiumDesc": "White-glove experience for executives",
-    "startFree": "Start Free",
+    "startFree": "Start Free Trial",
     "getStarted": "Get Started",
-    "allPlansInclude": "All plans include: Secure data encryption • GDPR compliance • Cancel anytime"
+    "allPlansInclude": "All plans include: Secure data encryption • GDPR compliance • Cancel anytime",
+    "freeTrial": "7 days free trial"
   },
   "footer": {
     "product": "Product",
@@ -117,13 +118,24 @@
     "languagePreference": "Language Preference",
     "languagePreferenceDesc": "All notifications will be sent in this language",
     "dangerZone": "Danger Zone",
-    "deleteAccount": "Delete account",
+    "deleteAccount": "Delete Account",
     "deleteAccountDesc": "Permanently delete your account and all data",
     "saveChanges": "Save Changes",
     "settingsSaved": "Settings saved",
     "settingsSavedDesc": "Your preferences have been updated.",
     "profileUpdated": "Profile updated",
-    "profileUpdatedDesc": "Your profile has been saved."
+    "profileUpdatedDesc": "Your profile has been saved.",
+    "accountDeleted": "Account Deleted",
+    "accountDeletedDesc": "Your account has been successfully deleted.",
+    "deleteAccountTitle": "Delete Your Account",
+    "deleteAccountWarning": "This action cannot be undone. All your data will be permanently deleted.",
+    "deleteAccountPermanent": "This will permanently delete:",
+    "deleteDataWarning1": "Your profile and settings",
+    "deleteDataWarning2": "All connected integrations",
+    "deleteDataWarning3": "Transaction history and wallet data",
+    "typeDeleteConfirm": "Type DELETE to confirm:",
+    "deleteAccountError": "Failed to delete account. Please try again.",
+    "subscription": "Subscription"
   },
   "wallet": {
     "title": "Wallet",
@@ -154,7 +166,9 @@
     "viewAll": "View all",
     "connectedIntegrations": "Connected Integrations",
     "forReview": "For Review",
-    "aiReasoning": "AI Reasoning"
+    "aiReasoning": "AI Reasoning",
+    "acceptOpportunity": "Accept",
+    "declineOpportunity": "Decline"
   },
   "notifications": {
     "title": "Notifications",
@@ -170,7 +184,9 @@
     "messengers": "Messengers",
     "socialNetworks": "Social Networks",
     "email": "Email",
-    "productivity": "Productivity"
+    "productivity": "Productivity",
+    "connectSuccess": "Integration connected successfully",
+    "connectError": "Failed to connect integration"
   },
   "auth": {
     "signInTitle": "Welcome back",
@@ -200,5 +216,30 @@
     "nl": "Nederlands",
     "pl": "Polski",
     "tr": "Türkçe"
+  },
+  "subscription": {
+    "title": "Subscription",
+    "selectPlan": "Select a Plan",
+    "selectPlanDesc": "Choose the plan that best fits your needs",
+    "changePlan": "Change Plan",
+    "changePlanDesc": "Select a new plan to switch to",
+    "cancelSubscription": "Cancel Subscription",
+    "confirmSelection": "Confirm Selection",
+    "currentPlan": "Current",
+    "freeTrial": "{{days}} days free trial",
+    "trialDaysLeft": "{{days}} days left in trial",
+    "trialExpired": "Trial Expired",
+    "trialExpiredTitle": "Your Trial Has Expired",
+    "trialExpiredDesc": "Please select a plan to continue using LifeOS features.",
+    "active": "Active",
+    "canceled": "Canceled",
+    "noPlan": "No Active Plan",
+    "cancelConfirmTitle": "Cancel Subscription?",
+    "cancelConfirmDesc": "Are you sure you want to cancel your subscription? You'll lose access to premium features.",
+    "confirmCancel": "Yes, Cancel",
+    "planUpdated": "Plan Updated",
+    "planUpdatedDesc": "Your subscription has been updated successfully.",
+    "planCanceled": "Subscription Canceled",
+    "planCanceledDesc": "Your subscription has been canceled."
   }
 }

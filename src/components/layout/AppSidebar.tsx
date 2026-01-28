@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { supabase } from "@/integrations/supabase/client";
+import { isAdminEmail } from "@/hooks/useAdminCheck";
 import {
   LayoutDashboard,
   Wallet,
@@ -29,15 +32,32 @@ export function AppSidebar({ onSignOut }: AppSidebarProps) {
   const { t } = useTranslation();
   const location = useLocation();
   const currentPath = location.pathname;
+  const [userEmail, setUserEmail] = useState<string | undefined>();
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUserEmail(session?.user?.email);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setUserEmail(session?.user?.email);
+      }
+    );
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const isAdmin = isAdminEmail(userEmail);
 
   const navItems = [
-    { titleKey: "nav.dashboard", url: "/dashboard", icon: LayoutDashboard },
-    { titleKey: "nav.wallet", url: "/wallet", icon: Wallet },
-    { titleKey: "nav.filtered", url: "/filtered", icon: Filter },
-    { titleKey: "nav.autoReplies", url: "/auto-replies", icon: MessageSquare },
-    { titleKey: "nav.integrations", url: "/integrations", icon: Link2 },
-    { titleKey: "nav.settings", url: "/settings", icon: Settings },
-  ];
+    { titleKey: "nav.dashboard", url: "/dashboard", icon: LayoutDashboard, show: true },
+    { titleKey: "nav.wallet", url: "/wallet", icon: Wallet, show: isAdmin },
+    { titleKey: "nav.filtered", url: "/filtered", icon: Filter, show: true },
+    { titleKey: "nav.autoReplies", url: "/auto-replies", icon: MessageSquare, show: true },
+    { titleKey: "nav.integrations", url: "/integrations", icon: Link2, show: true },
+    { titleKey: "nav.settings", url: "/settings", icon: Settings, show: true },
+  ].filter(item => item.show);
 
   const isActive = (path: string) => currentPath === path;
 

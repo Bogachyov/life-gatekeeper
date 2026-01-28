@@ -126,10 +126,20 @@ export default function AutoReplies() {
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Button variant="ghost" size="icon" title="View full conversation">
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    title="View full conversation"
+                    onClick={() => console.log("View reply:", reply.id)}
+                  >
                     <Eye className="w-4 h-4" />
                   </Button>
-                  <Button variant="ghost" size="icon" title="Undo auto-reply">
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    title="Undo auto-reply"
+                    onClick={() => console.log("Undo reply:", reply.id)}
+                  >
                     <RotateCcw className="w-4 h-4" />
                   </Button>
                 </div>
