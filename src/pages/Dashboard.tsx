@@ -4,61 +4,38 @@ import { useNavigate } from "react-router-dom";
 import { User } from "@supabase/supabase-js";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import {
-  Filter,
-  MessageSquare,
-  ChevronRight,
-  Sparkles,
-  TrendingUp,
-  Check,
-  X,
-  Clock,
+  Filter, MessageSquare, ChevronRight, Sparkles, TrendingUp, Check, X, Clock,
 } from "lucide-react";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { NotificationsPanel } from "@/components/notifications/NotificationsPanel";
 import { ProfileMenu } from "@/components/profile/ProfileMenu";
 
-// Sample data for demo
-const opportunities = [
+const initialOpportunities = [
   {
-    id: 1,
-    type: "escalated",
-    title: "Series A Investment Offer",
-    source: "Email",
-    sender: "partner@sequoia.com",
-    summary: "Interest in leading a $5M round based on your traction.",
-    aiReason: "Matches long-term funding goals. High-credibility sender.",
-    urgency: "high",
-    time: "2h ago",
+    id: 1, type: "escalated", title: "Series A Investment Offer", source: "Email",
+    sender: "partner@sequoia.com", summary: "Interest in leading a $5M round based on your traction.",
+    aiReason: "Matches long-term funding goals. High-credibility sender.", urgency: "high", time: "2h ago",
   },
   {
-    id: 2,
-    type: "review",
-    title: "Speaking at Web Summit",
-    source: "LinkedIn",
-    sender: "events@websummit.com",
-    summary: "Keynote invitation for November conference in Lisbon.",
-    aiReason: "Visibility opportunity but requires time commitment.",
-    urgency: "medium",
-    time: "5h ago",
+    id: 2, type: "review", title: "Speaking at Web Summit", source: "LinkedIn",
+    sender: "events@websummit.com", summary: "Keynote invitation for November conference in Lisbon.",
+    aiReason: "Visibility opportunity but requires time commitment.", urgency: "medium", time: "5h ago",
   },
   {
-    id: 3,
-    type: "review",
-    title: "Podcast Guest Invitation",
-    source: "Email",
-    sender: "host@techpodcast.fm",
-    summary: "30-min interview about your startup journey.",
-    aiReason: "Good reach but lower priority than current goals.",
-    urgency: "low",
-    time: "1d ago",
+    id: 3, type: "review", title: "Podcast Guest Invitation", source: "Email",
+    sender: "host@techpodcast.fm", summary: "30-min interview about your startup journey.",
+    aiReason: "Good reach but lower priority than current goals.", urgency: "low", time: "1d ago",
   },
 ];
 
 export default function Dashboard() {
   const { t } = useTranslation();
+  const { toast } = useToast();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [opportunities, setOpportunities] = useState(initialOpportunities);
   const navigate = useNavigate();
 
   const stats = [
@@ -72,26 +49,32 @@ export default function Dashboard() {
       (event, session) => {
         setUser(session?.user ?? null);
         setLoading(false);
-        if (!session) {
-          navigate("/auth");
-        }
+        if (!session) navigate("/auth");
       }
     );
-
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
       setLoading(false);
-      if (!session) {
-        navigate("/auth");
-      }
+      if (!session) navigate("/auth");
     });
-
     return () => subscription.unsubscribe();
   }, [navigate]);
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
     navigate("/");
+  };
+
+  const handleAccept = (id: number) => {
+    setOpportunities(prev => prev.filter(o => o.id !== id));
+    const opp = opportunities.find(o => o.id === id);
+    toast({ title: t("dashboard.acceptOpportunity"), description: opp?.title || "" });
+  };
+
+  const handleDecline = (id: number) => {
+    setOpportunities(prev => prev.filter(o => o.id !== id));
+    const opp = opportunities.find(o => o.id === id);
+    toast({ title: t("dashboard.declineOpportunity"), description: opp?.title || "" });
   };
 
   if (loading) {
@@ -104,7 +87,6 @@ export default function Dashboard() {
 
   return (
     <DashboardLayout>
-      {/* Top bar content */}
       <div className="border-b border-border/50 px-6 py-4 flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-serif font-bold">{t("dashboard.greeting")}</h1>
@@ -120,10 +102,7 @@ export default function Dashboard() {
         {/* Stats */}
         <div className="grid md:grid-cols-3 gap-4">
           {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="bg-card rounded-xl border border-border/50 p-6 hover:border-border transition-colors"
-            >
+            <div key={stat.label} className="bg-card rounded-xl border border-border/50 p-6 hover:border-border transition-colors">
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">{stat.label}</p>
@@ -157,44 +136,32 @@ export default function Dashboard() {
         <div>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold">{t("dashboard.priorityOpportunities")}</h2>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="text-muted-foreground"
-              onClick={() => navigate("/filtered")}
-            >
+            <Button variant="ghost" size="sm" className="text-muted-foreground" onClick={() => navigate("/filtered")}>
               {t("dashboard.viewAll")}
               <ChevronRight className="w-4 h-4 ml-1" />
             </Button>
           </div>
 
           <div className="space-y-4">
+            {opportunities.length === 0 && (
+              <div className="text-center py-8 text-muted-foreground">{t("dashboard.noOpportunities")}</div>
+            )}
             {opportunities.map((opp) => (
-              <div
-                key={opp.id}
-                className="bg-card rounded-xl border border-border/50 p-6 hover:border-border transition-colors"
-              >
+              <div key={opp.id} className="bg-card rounded-xl border border-border/50 p-6 hover:border-border transition-colors">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <span
-                        className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                          opp.type === "escalated"
-                            ? "bg-primary/20 text-primary"
-                            : "bg-secondary text-muted-foreground"
-                        }`}
-                      >
+                      <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                        opp.type === "escalated" ? "bg-primary/20 text-primary" : "bg-secondary text-muted-foreground"
+                      }`}>
                         {opp.type === "escalated" ? t("dashboard.escalated") : t("dashboard.forReview")}
                       </span>
                       <span className="text-xs text-muted-foreground flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        {opp.time}
+                        <Clock className="w-3 h-3" />{opp.time}
                       </span>
                     </div>
                     <h3 className="font-semibold mb-1">{opp.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      {opp.source} • {opp.sender}
-                    </p>
+                    <p className="text-sm text-muted-foreground mb-3">{opp.source} • {opp.sender}</p>
                     <p className="text-sm mb-3">{opp.summary}</p>
                     <div className="flex items-start gap-2 p-3 rounded-lg bg-secondary/50">
                       <Sparkles className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -205,26 +172,10 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <Button 
-                      variant="default" 
-                      size="sm"
-                      onClick={() => {
-                        // Handle accept opportunity
-                        console.log("Accepted opportunity:", opp.id);
-                      }}
-                      title={t("dashboard.acceptOpportunity")}
-                    >
+                    <Button variant="default" size="sm" onClick={() => handleAccept(opp.id)} title={t("dashboard.acceptOpportunity")}>
                       <Check className="w-4 h-4" />
                     </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      onClick={() => {
-                        // Handle decline opportunity
-                        console.log("Declined opportunity:", opp.id);
-                      }}
-                      title={t("dashboard.declineOpportunity")}
-                    >
+                    <Button variant="outline" size="sm" onClick={() => handleDecline(opp.id)} title={t("dashboard.declineOpportunity")}>
                       <X className="w-4 h-4" />
                     </Button>
                   </div>
@@ -238,42 +189,22 @@ export default function Dashboard() {
         <div className="bg-card rounded-xl border border-border/50 p-6">
           <h2 className="text-lg font-semibold mb-4">{t("dashboard.connectedIntegrations")}</h2>
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-background flex items-center justify-center">
-                  <span className="text-lg">📧</span>
+            {[{ name: "Gmail", emoji: "📧" }, { name: "LinkedIn", emoji: "💼" }].map(item => (
+              <div key={item.name} className="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-background flex items-center justify-center">
+                    <span className="text-lg">{item.emoji}</span>
+                  </div>
+                  <div>
+                    <p className="font-medium">{item.name}</p>
+                    <p className="text-sm text-muted-foreground">{t("common.notConnected")}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-medium">Gmail</p>
-                  <p className="text-sm text-muted-foreground">{t("common.notConnected")}</p>
-                </div>
+                <Button variant="outline" size="sm" onClick={() => navigate("/integrations")}>
+                  {t("common.connect")}
+                </Button>
               </div>
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => navigate("/integrations")}
-              >
-                {t("common.connect")}
-              </Button>
-            </div>
-            <div className="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-background flex items-center justify-center">
-                  <span className="text-lg">💼</span>
-                </div>
-                <div>
-                  <p className="font-medium">LinkedIn</p>
-                  <p className="text-sm text-muted-foreground">{t("common.notConnected")}</p>
-                </div>
-              </div>
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => navigate("/integrations")}
-              >
-                {t("common.connect")}
-              </Button>
-            </div>
+            ))}
           </div>
         </div>
       </div>

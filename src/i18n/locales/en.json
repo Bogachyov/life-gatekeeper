@@ -167,8 +167,9 @@
     "connectedIntegrations": "Connected Integrations",
     "forReview": "For Review",
     "aiReasoning": "AI Reasoning",
-    "acceptOpportunity": "Accept",
-    "declineOpportunity": "Decline"
+    "acceptOpportunity": "Accepted",
+    "declineOpportunity": "Declined",
+    "noOpportunities": "No pending opportunities. You're all caught up!"
   },
   "notifications": {
     "title": "Notifications",
@@ -185,8 +186,41 @@
     "socialNetworks": "Social Networks",
     "email": "Email",
     "productivity": "Productivity",
-    "connectSuccess": "Integration connected successfully",
-    "connectError": "Failed to connect integration"
+    "connectSuccess": "Integration connected",
+    "connectedDesc": "{{name}} has been connected as {{username}}.",
+    "connectError": "Failed to connect integration",
+    "connectTitle": "Connect {{name}}",
+    "connectDesc": "Authorize LifeOS to access your {{name}} account. We'll use this to filter and manage your messages.",
+    "disconnectTitle": "Disconnect {{name}}",
+    "disconnectDesc": "Are you sure you want to disconnect {{name}}? LifeOS will no longer manage messages from this account.",
+    "permissionsInfo": "LifeOS will request read access to your {{name}} messages. We never post or send messages without your permission.",
+    "accountLabel": "{{name}} username or email",
+    "accountPlaceholder": "e.g. @yourhandle or email",
+    "accountHelp": "Enter the account you want to connect. In production, this will redirect to the official OAuth page.",
+    "oauthNote": "Your credentials are securely handled via OAuth. We never store your password.",
+    "confirmConnect": "Connect Account",
+    "confirmDisconnect": "Disconnect",
+    "disconnected": "{{name}} disconnected",
+    "disconnectedDesc": "{{name}} has been disconnected from LifeOS."
+  },
+  "filtered": {
+    "viewing": "Viewing message",
+    "archived": "Message archived",
+    "deleted": "Message deleted",
+    "view": "View",
+    "archive": "Archive",
+    "deleteMsg": "Delete",
+    "noMessages": "No filtered messages yet."
+  },
+  "autoReplies": {
+    "viewing": "Viewing conversation",
+    "undone": "Auto-reply undone",
+    "sent": "Sent",
+    "pendingReview": "Pending Review",
+    "response": "Response",
+    "viewFull": "View full conversation",
+    "undo": "Undo auto-reply",
+    "noReplies": "No auto-replies sent yet."
   },
   "auth": {
     "signInTitle": "Welcome back",

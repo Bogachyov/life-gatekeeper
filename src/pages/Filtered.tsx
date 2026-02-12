@@ -4,48 +4,23 @@ import { useNavigate } from "react-router-dom";
 import { User } from "@supabase/supabase-js";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { Mail, Linkedin, Archive, Trash2, Eye } from "lucide-react";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 
-const filteredMessages = [
-  {
-    id: 1,
-    source: "email",
-    sender: "newsletter@techweekly.com",
-    subject: "Weekly Tech Roundup #234",
-    reason: "Promotional newsletter - not matching priority criteria",
-    time: "2h ago",
-  },
-  {
-    id: 2,
-    source: "linkedin",
-    sender: "John Recruiter",
-    subject: "Exciting opportunity at XYZ Corp",
-    reason: "Generic recruitment message - no personalization detected",
-    time: "4h ago",
-  },
-  {
-    id: 3,
-    source: "email",
-    sender: "sales@saasproduct.io",
-    subject: "Limited time offer - 50% off",
-    reason: "Sales pitch - filtered based on your preferences",
-    time: "6h ago",
-  },
-  {
-    id: 4,
-    source: "linkedin",
-    sender: "Connection Request",
-    subject: "Let's connect!",
-    reason: "No mutual connections, generic message template",
-    time: "1d ago",
-  },
+const initialMessages = [
+  { id: 1, source: "email", sender: "newsletter@techweekly.com", subject: "Weekly Tech Roundup #234", reason: "Promotional newsletter - not matching priority criteria", time: "2h ago" },
+  { id: 2, source: "linkedin", sender: "John Recruiter", subject: "Exciting opportunity at XYZ Corp", reason: "Generic recruitment message - no personalization detected", time: "4h ago" },
+  { id: 3, source: "email", sender: "sales@saasproduct.io", subject: "Limited time offer - 50% off", reason: "Sales pitch - filtered based on your preferences", time: "6h ago" },
+  { id: 4, source: "linkedin", sender: "Connection Request", subject: "Let's connect!", reason: "No mutual connections, generic message template", time: "1d ago" },
 ];
 
 export default function Filtered() {
   const { t } = useTranslation();
+  const { toast } = useToast();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [messages, setMessages] = useState(initialMessages);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -53,22 +28,33 @@ export default function Filtered() {
       (event, session) => {
         setUser(session?.user ?? null);
         setLoading(false);
-        if (!session) {
-          navigate("/auth");
-        }
+        if (!session) navigate("/auth");
       }
     );
-
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
       setLoading(false);
-      if (!session) {
-        navigate("/auth");
-      }
+      if (!session) navigate("/auth");
     });
-
     return () => subscription.unsubscribe();
   }, [navigate]);
+
+  const handleView = (id: number) => {
+    const msg = messages.find(m => m.id === id);
+    toast({ title: t("filtered.viewing"), description: msg?.subject || "" });
+  };
+
+  const handleArchive = (id: number) => {
+    const msg = messages.find(m => m.id === id);
+    setMessages(prev => prev.filter(m => m.id !== id));
+    toast({ title: t("filtered.archived"), description: msg?.subject || "" });
+  };
+
+  const handleDelete = (id: number) => {
+    const msg = messages.find(m => m.id === id);
+    setMessages(prev => prev.filter(m => m.id !== id));
+    toast({ title: t("filtered.deleted"), description: msg?.subject || "" });
+  };
 
   if (loading) {
     return (
@@ -89,11 +75,8 @@ export default function Filtered() {
         </div>
 
         <div className="space-y-4">
-          {filteredMessages.map((message) => (
-            <div
-              key={message.id}
-              className="bg-card rounded-xl border border-border/50 p-4 hover:border-border transition-colors"
-            >
+          {messages.map((message) => (
+            <div key={message.id} className="bg-card rounded-xl border border-border/50 p-4 hover:border-border transition-colors">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">
                   {message.source === "email" ? (
@@ -113,28 +96,13 @@ export default function Filtered() {
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Button 
-                    variant="ghost" 
-                    size="icon" 
-                    title="View"
-                    onClick={() => console.log("View message:", message.id)}
-                  >
+                  <Button variant="ghost" size="icon" title={t("filtered.view")} onClick={() => handleView(message.id)}>
                     <Eye className="w-4 h-4" />
                   </Button>
-                  <Button 
-                    variant="ghost" 
-                    size="icon" 
-                    title="Archive"
-                    onClick={() => console.log("Archive message:", message.id)}
-                  >
+                  <Button variant="ghost" size="icon" title={t("filtered.archive")} onClick={() => handleArchive(message.id)}>
                     <Archive className="w-4 h-4" />
                   </Button>
-                  <Button 
-                    variant="ghost" 
-                    size="icon" 
-                    title="Delete"
-                    onClick={() => console.log("Delete message:", message.id)}
-                  >
+                  <Button variant="ghost" size="icon" title={t("filtered.deleteMsg")} onClick={() => handleDelete(message.id)}>
                     <Trash2 className="w-4 h-4" />
                   </Button>
                 </div>
@@ -143,9 +111,9 @@ export default function Filtered() {
           ))}
         </div>
 
-        {filteredMessages.length === 0 && (
+        {messages.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground">No filtered messages yet.</p>
+            <p className="text-muted-foreground">{t("filtered.noMessages")}</p>
           </div>
         )}
       </div>

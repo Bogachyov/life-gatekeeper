@@ -1,31 +1,17 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { supabase } from "@/integrations/supabase/client";
 import { User } from "@supabase/supabase-js";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
+import { ConnectConfirmDialog } from "@/components/integrations/ConnectConfirmDialog";
 import { 
-  ArrowLeft, 
-  Mail, 
-  Linkedin, 
-  Calendar, 
-  MessageSquare, 
-  Send, 
-  Phone, 
-  Video, 
-  Hash, 
-  Users, 
-  Globe, 
-  Camera, 
-  Music, 
-  Twitter,
-  Check,
-  Loader2
+  Mail, Linkedin, Calendar, MessageSquare, Send, Phone, Video, 
+  Hash, Users, Globe, Camera, Music, Twitter, Check, Loader2
 } from "lucide-react";
 
-// Messenger integrations
 const messengers = [
   { name: "WhatsApp", icon: Phone, status: "available", color: "bg-green-500" },
   { name: "Telegram", icon: Send, status: "available", color: "bg-blue-500" },
@@ -42,7 +28,6 @@ const messengers = [
   { name: "CoWork", icon: Users, status: "available", color: "bg-teal-500" },
 ];
 
-// Social network integrations
 const socialNetworks = [
   { name: "Instagram", icon: Camera, status: "available", color: "bg-gradient-to-br from-purple-500 to-pink-500" },
   { name: "Twitter/X", icon: Twitter, status: "available", color: "bg-black" },
@@ -52,36 +37,27 @@ const socialNetworks = [
   { name: "Facebook", icon: Users, status: "available", color: "bg-blue-600" },
 ];
 
-// Email integrations
 const emailIntegrations = [
   { name: "Gmail", icon: Mail, status: "available", color: "bg-red-500" },
   { name: "Outlook", icon: Mail, status: "available", color: "bg-blue-500" },
   { name: "Yahoo Mail", icon: Mail, status: "available", color: "bg-purple-500" },
 ];
 
-// Productivity integrations  
 const productivityIntegrations = [
   { name: "Google Calendar", icon: Calendar, status: "available", color: "bg-blue-500" },
   { name: "Zoom", icon: Video, status: "available", color: "bg-blue-600" },
   { name: "Google Meet", icon: Video, status: "available", color: "bg-green-500" },
 ];
 
+interface ConnectedAccount {
+  username: string;
+}
+
 function IntegrationCard({ 
-  name, 
-  icon: Icon, 
-  status, 
-  color,
-  connected,
-  onConnect,
-  connecting
+  name, icon: Icon, color, connected, onConnect, connecting
 }: { 
-  name: string; 
-  icon: any; 
-  status: string; 
-  color: string;
-  connected: boolean;
-  onConnect: () => void;
-  connecting: boolean;
+  name: string; icon: any; color: string; connected: boolean;
+  onConnect: () => void; connecting: boolean;
 }) {
   const { t } = useTranslation();
   
@@ -120,17 +96,10 @@ function IntegrationCard({
 }
 
 function IntegrationSection({ 
-  title, 
-  integrations,
-  connectedIntegrations,
-  onConnect,
-  connectingIntegration
+  title, integrations, connectedIntegrations, onConnect, connectingIntegration
 }: { 
-  title: string; 
-  integrations: any[];
-  connectedIntegrations: Set<string>;
-  onConnect: (name: string) => void;
-  connectingIntegration: string | null;
+  title: string; integrations: any[]; connectedIntegrations: Map<string, ConnectedAccount>;
+  onConnect: (name: string) => void; connectingIntegration: string | null;
 }) {
   return (
     <div className="space-y-4">
@@ -156,54 +125,82 @@ export default function Integrations() {
   const { toast } = useToast();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [connectedIntegrations, setConnectedIntegrations] = useState<Set<string>>(new Set());
+  const [connectedIntegrations, setConnectedIntegrations] = useState<Map<string, ConnectedAccount>>(new Map());
   const [connectingIntegration, setConnectingIntegration] = useState<string | null>(null);
+  
+  // Dialog state
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogIntegration, setDialogIntegration] = useState<{ name: string; icon: any; color: string } | null>(null);
+  const [dialogLoading, setDialogLoading] = useState(false);
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
         setUser(session?.user ?? null);
         setLoading(false);
-        if (!session) {
-          navigate("/auth");
-        }
+        if (!session) navigate("/auth");
       }
     );
 
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
       setLoading(false);
-      if (!session) {
-        navigate("/auth");
-      }
+      if (!session) navigate("/auth");
     });
 
     return () => subscription.unsubscribe();
   }, [navigate]);
 
-  const handleConnect = async (integrationName: string) => {
-    setConnectingIntegration(integrationName);
+  const findIntegrationMeta = (name: string) => {
+    const all = [...messengers, ...socialNetworks, ...emailIntegrations, ...productivityIntegrations];
+    return all.find(i => i.name === name);
+  };
+
+  const handleConnect = (integrationName: string) => {
+    const meta = findIntegrationMeta(integrationName);
+    if (!meta) return;
     
-    // Simulate API connection (replace with real API calls)
+    const isConnected = connectedIntegrations.has(integrationName);
+    const Icon = meta.icon;
+    
+    setDialogIntegration({
+      name: integrationName,
+      icon: <Icon className="w-5 h-5 text-white" />,
+      color: meta.color,
+    });
+    setDialogOpen(true);
+  };
+
+  const handleConfirmConnect = async (username: string) => {
+    if (!dialogIntegration) return;
+    const name = dialogIntegration.name;
+    const isDisconnecting = connectedIntegrations.has(name);
+    
+    setDialogLoading(true);
+    
+    // Simulate OAuth flow
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     setConnectedIntegrations(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(integrationName)) {
-        newSet.delete(integrationName);
+      const newMap = new Map(prev);
+      if (isDisconnecting) {
+        newMap.delete(name);
       } else {
-        newSet.add(integrationName);
+        newMap.set(name, { username });
       }
-      return newSet;
+      return newMap;
     });
     
-    setConnectingIntegration(null);
+    setDialogLoading(false);
+    setDialogOpen(false);
     
     toast({
-      title: connectedIntegrations.has(integrationName) 
-        ? "Integration disconnected" 
+      title: isDisconnecting 
+        ? t("integrations.disconnected", { name })
         : t("integrations.connectSuccess"),
-      description: `${integrationName} has been ${connectedIntegrations.has(integrationName) ? 'disconnected' : 'connected'} successfully.`,
+      description: isDisconnecting
+        ? t("integrations.disconnectedDesc", { name })
+        : t("integrations.connectedDesc", { name, username }),
     });
   };
 
@@ -215,13 +212,13 @@ export default function Integrations() {
     );
   }
 
+  const isDisconnecting = dialogIntegration ? connectedIntegrations.has(dialogIntegration.name) : false;
+
   return (
     <DashboardLayout>
       <div className="p-6 max-w-4xl">
         <h1 className="text-2xl font-serif font-bold mb-2">{t("integrations.title")}</h1>
-        <p className="text-muted-foreground mb-8">
-          {t("integrations.subtitle")}
-        </p>
+        <p className="text-muted-foreground mb-8">{t("integrations.subtitle")}</p>
 
         <div className="space-y-12">
           <IntegrationSection 
@@ -254,6 +251,19 @@ export default function Integrations() {
           />
         </div>
       </div>
+
+      {dialogIntegration && (
+        <ConnectConfirmDialog
+          open={dialogOpen}
+          onOpenChange={setDialogOpen}
+          integrationName={dialogIntegration.name}
+          integrationIcon={dialogIntegration.icon}
+          integrationColor={dialogIntegration.color}
+          isDisconnecting={isDisconnecting}
+          onConfirm={handleConfirmConnect}
+          loading={dialogLoading}
+        />
+      )}
     </DashboardLayout>
   );
 }
